@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Keys xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Key Name="UI_LANGUAGE">
+		<Translates>
+			<en>Language</en>
+			<ru>Язык</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_LANGUAGE_SELECT">
+		<Translates>
+			<en>English</en>
+			<ru>Русский</ru>
+			<!--<de>Deutsch</de>
+			<fr>Français</fr>
+			<es>Español</es>
+			<it>Italiano</it>
+			<zh>中国人</zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_BUTTON_NEXT_SCENE">
+		<Translates>
+			<en>Next Scene</en>
+			<ru>Следующая сцена</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_BUTTON_OPTIONS">
+		<Translates>
+			<en>Options</en>
+			<ru>Настройки</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_BUTTON_QUIT">
+		<Translates>
+			<en>Quit</en>
+			<ru>Выйти из игры</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_TAB_GAME">
+		<Translates>
+			<en>Game</en>
+			<ru>Игра</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_TAB_SOUND">
+		<Translates>
+			<en>Sound</en>
+			<ru>Звук</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_BUTTON_SETTINGS_APPLY">
+		<Translates>
+			<en>Apply</en>
+			<ru>Применить</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_OVERALL_VOLUME">
+		<Translates>
+			<en>Overall volume</en>
+			<ru>Общая громкость</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_MUSIC">
+		<Translates>
+			<en>Music</en>
+			<ru>Музыка</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_EFFECTS">
+		<Translates>
+			<en>Effects</en>
+			<ru>Эффекты</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_VOICE">
+		<Translates>
+			<en>Voice</en>
+			<ru>Голос</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_RESOLUTION">
+		<Translates>
+			<en>Resolution</en>
+			<ru>Разрешение</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+	<Key Name="UI_FULLSCREEN">
+		<Translates>
+			<en>Fullscreen</en>
+			<ru>Полный экран</ru>
+			<!--<de></de>
+			<fr></fr>
+			<es></es>
+			<it></it>
+			<zh></zh>-->
+		</Translates>
+	</Key>
+</Keys>

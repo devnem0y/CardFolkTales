@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fa608f28ec46f2888d958d375cd001, type: 3}
+  m_Name: Saver
+  m_EditorClassIdentifier: 
+  _settingsMock: {fileID: 11400000, guid: efa58e445dde79a4cac47422c36bef65, type: 2}
+  _playerMock: {fileID: 11400000, guid: 6ef281ffb0eb3d84ebec8b4f3f5e412d, type: 2}
