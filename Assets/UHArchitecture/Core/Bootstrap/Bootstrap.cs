@@ -15,9 +15,13 @@ namespace UralHedgehog
         [SerializeField] private AudioMixer _audioMixer;
         [SerializeField] private AudioResources _audioResources;
         
+        [SerializeField] private ScreenTransition _screenTransition;
+        
         public LocalizationManager LocalizationManager { get; private set; }
         public AudioManager AudioManager { get; private set; }
         public GameState GameState { get; private set; }
+
+        public ScreenTransition ScreenTransition => _screenTransition;
 
         public event Action Loading;
         public event Action Launch;

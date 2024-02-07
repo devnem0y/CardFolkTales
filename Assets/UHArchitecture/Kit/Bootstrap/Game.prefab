@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1123845123969931611}
+  - {fileID: 8089601275223755033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4825667196653231922
@@ -50,6 +51,7 @@ MonoBehaviour:
   _localizationConfig: {fileID: 11400000, guid: 559fc892bc1cc704e94e95af25cd11e8, type: 2}
   _audioMixer: {fileID: 24100000, guid: da9ec1a4d53de364aa35ce645567570f, type: 2}
   _audioResources: {fileID: 11400000, guid: e6f72874f0ca96f42ab9be2a8f01f222, type: 2}
+  _screenTransition: {fileID: 2402895376572982100}
 --- !u!1001 &1123314585695001885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,4 +113,77 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4050075098924102, guid: 89d16b9b28c43d04c925673c9d42bba3, type: 3}
   m_PrefabInstance: {fileID: 1123314585695001885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8077826176262120296
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4410706757767431729}
+    m_Modifications:
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960304060493386304, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+      propertyPath: m_Name
+      value: ScreenTransition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+--- !u!114 &2402895376572982100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5855515723576311868, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+  m_PrefabInstance: {fileID: 8077826176262120296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2993b451c78e4646970a11f4a8f19a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8089601275223755033 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 26526148074072689, guid: 9b3356da562dce94cb8c30394e9588ee, type: 3}
+  m_PrefabInstance: {fileID: 8077826176262120296}
   m_PrefabAsset: {fileID: 0}
