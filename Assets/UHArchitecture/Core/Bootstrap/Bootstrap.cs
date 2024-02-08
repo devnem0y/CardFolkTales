@@ -49,7 +49,7 @@ namespace UralHedgehog
             Launch?.Invoke();
             yield return new WaitForSeconds(0.01f);
             Begin?.Invoke();
-            ChangeState(GameState.MAIN);
+            OnBegin();
         }
 
         /// <summary>
@@ -64,6 +64,11 @@ namespace UralHedgehog
             _player = new Player(_loader.UserInfo.PlayerData);
             
             _init = true;
+        }
+        
+        protected virtual void OnBegin()
+        {
+            ChangeState(GameState.MAIN);
         }
 
         public void SaveSettings()

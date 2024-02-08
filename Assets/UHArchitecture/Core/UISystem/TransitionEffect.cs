@@ -5,28 +5,47 @@ using UnityEngine;
 public class TransitionEffect : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private float _delay;
+    [SerializeField] private GameObject _labelNext;
     
     private Action _callback;
-    private float _delay;
     
-    public void Init(Action callback, float delay)
+    public void Init(Action callback, TransitionMode transitionMode)
     {
-        _callback = callback;
-        _delay = delay;
-        _animator.Play("Show");
+        if (transitionMode == TransitionMode.SHOW_HIDE)
+        {
+            _callback = callback;
+            _animator.Play("Show");   
+        }
+        else
+        {
+            _animator.Play("Normal");
+            callback?.Invoke();
+        }
     }
 
     private void AnimationEvent()
     {
         _callback?.Invoke();
-        StartCoroutine(HideDelay());
+        StartCoroutine(HideDelay(true));
     }
     
-    private IEnumerator HideDelay()
+    private IEnumerator HideDelay(bool isDelay)
     {
-        yield return new WaitForSeconds(_delay);
+        yield return new WaitForSeconds(isDelay ? _delay : 0.25f);
         _animator.Play("Hide");
         var currentAnimationTime = _animator.GetCurrentAnimatorStateInfo(0).length;
-        Destroy(gameObject, currentAnimationTime - 0.13f);
+        Destroy(gameObject, currentAnimationTime + 0.15f);
+    }
+
+    public void OnHide()
+    {
+        _labelNext.SetActive(false);
+        StartCoroutine(HideDelay(false));
+    }
+
+    public void ShowLabelNext()
+    {
+        _labelNext.SetActive(true);
     }
 }
