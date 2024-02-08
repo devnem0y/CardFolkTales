@@ -12,7 +12,12 @@ public class WSettings : Widget
     protected override void Awake()
     {
         base.Awake();
-        _btnClose.onClick.AddListener(Hide);
+        _btnClose.onClick.AddListener(() =>
+        {
+            //TODO: Для теста
+            Game.Instance.ChangeState(Game.Instance.GameState == GameState.MAIN ? GameState.PLAY : GameState.MAIN);
+            Hide();
+        });
     }
 
     public override void Init(params object[] param)

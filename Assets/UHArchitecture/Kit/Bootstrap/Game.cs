@@ -35,10 +35,11 @@ namespace UralHedgehog
                     break;
                 case GameState.MAIN:
                     Debug.Log("<color=yellow>Main</color>");
-                    ScreenTransition.Perform(OpenViewSettings, 0.3f);
+                    ScreenTransition.Perform(OpenViewSettings, 1.3f);
                     break;
                 case GameState.PLAY:
                     Debug.Log("<color=yellow>Play</color>");
+                    ScreenTransition.Perform(OpenViewSettings, 1.3f);
                     break;
                 case GameState.VICTORY:
                     Debug.Log("<color=yellow>Victory</color>");
