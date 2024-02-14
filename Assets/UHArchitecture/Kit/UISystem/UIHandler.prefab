@@ -81,6 +81,10 @@ MonoBehaviour:
   _wrapperWindows: {fileID: 1219260050171743274}
   _widgets:
   - {fileID: 8015555602500150929, guid: 89ce16450e791614295a50c99e127b7e, type: 3}
+  - {fileID: 1339151677855420188, guid: b8d2731b4e837344796b85c408cb3cca, type: 3}
+  - {fileID: 4018854143383722129, guid: 9c26355243da5c542a3b62fdab2d616d, type: 3}
+  - {fileID: 5339122126278157404, guid: 33c6e9dcd680c224197b7489ca8373ad, type: 3}
+  - {fileID: 665487707825057939, guid: acd899e9df62d764a81acf931f33f735, type: 3}
 --- !u!1 &8753377776333382170
 GameObject:
   m_ObjectHideFlags: 0

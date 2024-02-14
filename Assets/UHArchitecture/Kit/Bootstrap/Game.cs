@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using UnityEngine;
 using UralHedgehog.UI;
 
@@ -8,6 +7,10 @@ namespace UralHedgehog
     public class Game : Bootstrap
     {
         public static Game Instance { get; private set; }
+
+        [SerializeField] private SpriteRenderer _background;
+        [SerializeField] private Sprite _bgMain;
+        [SerializeField] private Sprite _bgBattle;
 
         private bool _isFirstLaunch;
         private bool _isBegin;
@@ -30,7 +33,9 @@ namespace UralHedgehog
 
         protected override void OnBegin()
         {
-            OpenViewSettings();
+            _background.sprite = _bgMain;
+            PanelMenu(true);
+            ScreenMain(true);
             ScreenTransition.ShowLabelNext();
             _isBegin = true;
         }
@@ -49,7 +54,12 @@ namespace UralHedgehog
                     Debug.Log("<color=yellow>Main</color>");
                     if (!_isFirstLaunch)
                     {
-                        ScreenTransition.Perform(OpenViewSettings);   
+                        ScreenTransition.Perform(() =>
+                        {
+                            _background.sprite = _bgMain;
+                            ScreenBattle(false);
+                            ScreenMain(true);
+                        });   
                     }
                     else
                     {
@@ -58,7 +68,12 @@ namespace UralHedgehog
                     break;
                 case GameState.PLAY:
                     Debug.Log("<color=yellow>Play</color>");
-                    ScreenTransition.Perform(OpenViewSettings);
+                    ScreenTransition.Perform(() =>
+                    {
+                        _background.sprite = _bgBattle;
+                        ScreenMain(false);
+                        ScreenBattle(true);
+                    });
                     break;
                 case GameState.VICTORY:
                     Debug.Log("<color=yellow>Victory</color>");
@@ -83,6 +98,28 @@ namespace UralHedgehog
                     ChangeState(GameState.MAIN);
                 }
             }
+        }
+
+        private static void ScreenMain(bool show)
+        {
+            var pMainPlayerInfoData = new Data(nameof(PMainPlayerInfo));
+            var pMainBottom = new Data(nameof(PMainBottom));
+            
+            UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pMainPlayerInfoData);
+            UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pMainBottom);
+        }
+
+        private static void ScreenBattle(bool show)
+        {
+            var pBattle = new Data(nameof(PBattle));
+            
+            UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pBattle);
+        }
+
+        private static void PanelMenu(bool show)
+        {
+            var pMenuData = new Data(nameof(PMenu));
+            UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pMenuData);
         }
     }
 }
