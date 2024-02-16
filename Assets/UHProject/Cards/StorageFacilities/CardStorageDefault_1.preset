@@ -1,0 +1,951 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CardStorageDefault_1
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 50b23a65b628ca54187f3f9f9bff7723, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _prefabCardUnit
+    value: 
+    objectReference: {fileID: 772526161557537759, guid: 7e0cf286623ff244a96ab07e05de09d2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _prefabCardBonus
+    value: 
+    objectReference: {fileID: 1328224851995094630, guid: 21b5fb8fd3aba6f4b92690f4a0060a8a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.size
+    value: 19
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._name
+    value: UNIT_STORMTROOPERS
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._identity
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: df19ba9c803dbd34b91e61de1c825378, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._description
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._turnPoints
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._attack
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[0]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._name
+    value: UNIT_SPECIAL_FORCES
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._identity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: ced7136195dd0524f9542e126e30392e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._description
+    value: Special forces
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._turnPoints
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[1]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._name
+    value: UNIT_MOTOR_RIFLE
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._identity
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 8526ef3cfbb9e7943afeb2f99c67b733, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._description
+    value: Motor rifle
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._turnPoints
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._hp
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._attack
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[2]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._name
+    value: UNIT_BMP
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._identity
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 4972395e60877944e892c43904b33fc3, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._description
+    value: BMP
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._turnPoints
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._unitType
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[3]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._name
+    value: UNIT_SIMPLE_TANK
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._identity
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 17f27126fc57712499dcbc559f8f4c71, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._description
+    value: Simple tank
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._turnPoints
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._unitType
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._hp
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._attack
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[4]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._name
+    value: UNIT_HEAVY_TANK
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._identity
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 674843d9f9c2de847a6b9e316861a5df, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._description
+    value: Heavy tank
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._turnPoints
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._unitType
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._hp
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._attack
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[5]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._name
+    value: UNIT_MORTAR
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._identity
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 003f02e68d95f774db746e497ebb5c5e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._description
+    value: Mortar
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._unitType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._attack
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[6]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._name
+    value: UNIT_BARREL_ARTILLERY
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._identity
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 8cb6c6a18bede0748ba704f8af27a6ca, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._description
+    value: Barrel artillery
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._turnPoints
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._unitType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._attack
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[7]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._name
+    value: UNIT_MLRS
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._identity
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 14fdbade875a2b642a05c9bf2d92a8ca, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._description
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._turnPoints
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._unitType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._attack
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[8]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._name
+    value: BONUS_SMALL_BOX_AMMO
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._identity
+    value: 51
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: dfc127692ff8ce24a803c0c05b2c6f67, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._description
+    value: BONUS_DESCRIPTION_AMMO
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._magnitude
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[9]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._name
+    value: BONUS_MEDIUM_BOX_AMMO
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._identity
+    value: 57
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: dfc127692ff8ce24a803c0c05b2c6f67, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._description
+    value: BONUS_DESCRIPTION_AMMO
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._magnitude
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[10]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._name
+    value: BONUS_BIG_BOX_AMMO
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._identity
+    value: 58
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: dfc127692ff8ce24a803c0c05b2c6f67, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._description
+    value: BONUS_DESCRIPTION_AMMO
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._bonusType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._magnitude
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[11]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._name
+    value: BONUS_SMALL_SHELTER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._identity
+    value: 53
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 64ebe95673ffaf440a26529e443eaecb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._description
+    value: BONUS_DESCRIPTION_SHELTER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._bonusType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._magnitude
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[12]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._name
+    value: BONUS_MEDIUM_SHELTER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._identity
+    value: 59
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 64ebe95673ffaf440a26529e443eaecb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._description
+    value: BONUS_DESCRIPTION_SHELTER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._bonusType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._magnitude
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[13]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._name
+    value: BONUS_BIG_SHELTER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._identity
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 64ebe95673ffaf440a26529e443eaecb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._description
+    value: BONUS_DESCRIPTION_SHELTER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._bonusType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._magnitude
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[14]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._name
+    value: BONUS_MEDICINE
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._identity
+    value: 52
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 4715796645f99aa4b8b54a42c47a69dc, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._description
+    value: BONUS_DESCRIPTION_MEDICINE
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._bonusType
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[15]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._name
+    value: BONUS_ACCURACY
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._identity
+    value: 54
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: f6851c87a711e9d478b7005713976caf, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._description
+    value: BONUS_DESCRIPTION_ACCURACY
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._bonusType
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[16]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._name
+    value: BONUS_GRENADE_LAUNCHER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._identity
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: 3f42b642873f2fc40b86fe703c84b811, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._description
+    value: BONUS_DESCRIPTION_GRENADE_LAUNCHER
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._bonusType
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[17]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._name
+    value: BONUS_REPAIR_KIT
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._identity
+    value: 56
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._icon
+    value: 
+    objectReference: {fileID: 21300000, guid: ad5335cebc68df542a446c060c528e5b, type: 3}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._description
+    value: BONUS_DESCRIPTION_REPAIR_KIT
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._turnPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._bonusType
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._magnitude
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._unitType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._hp
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._attack
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _cards.Array.data[18]._defense
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

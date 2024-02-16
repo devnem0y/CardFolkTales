@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b23a65b628ca54187f3f9f9bff7723, type: 3}
+  m_Name: CardStorage
+  m_EditorClassIdentifier: 
+  _prefabCardUnit: {fileID: 772526161557537759, guid: 7e0cf286623ff244a96ab07e05de09d2, type: 3}
+  _prefabCardBonus: {fileID: 1328224851995094630, guid: 21b5fb8fd3aba6f4b92690f4a0060a8a, type: 3}
+  _cards:
+  - _name: UNIT_STORMTROOPERS
+    _identity: 1
+    _icon: {fileID: 21300000, guid: df19ba9c803dbd34b91e61de1c825378, type: 3}
+    _description: 
+    _turnPoints: 1
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 1
+    _defense: 0
+  - _name: UNIT_SPECIAL_FORCES
+    _identity: 2
+    _icon: {fileID: 21300000, guid: ced7136195dd0524f9542e126e30392e, type: 3}
+    _description: Special forces
+    _turnPoints: 2
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: UNIT_MOTOR_RIFLE
+    _identity: 3
+    _icon: {fileID: 21300000, guid: 8526ef3cfbb9e7943afeb2f99c67b733, type: 3}
+    _description: Motor rifle
+    _turnPoints: 4
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 0
+    _hp: 4
+    _attack: 3
+    _defense: 0
+  - _name: UNIT_BMP
+    _identity: 4
+    _icon: {fileID: 21300000, guid: 4972395e60877944e892c43904b33fc3, type: 3}
+    _description: BMP
+    _turnPoints: 2
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 1
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: UNIT_SIMPLE_TANK
+    _identity: 5
+    _icon: {fileID: 21300000, guid: 17f27126fc57712499dcbc559f8f4c71, type: 3}
+    _description: Simple tank
+    _turnPoints: 4
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 1
+    _hp: 3
+    _attack: 3
+    _defense: 0
+  - _name: UNIT_HEAVY_TANK
+    _identity: 6
+    _icon: {fileID: 21300000, guid: 674843d9f9c2de847a6b9e316861a5df, type: 3}
+    _description: Heavy tank
+    _turnPoints: 5
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 1
+    _hp: 4
+    _attack: 3
+    _defense: 0
+  - _name: UNIT_MORTAR
+    _identity: 7
+    _icon: {fileID: 21300000, guid: 003f02e68d95f774db746e497ebb5c5e, type: 3}
+    _description: Mortar
+    _turnPoints: 3
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 3
+    _defense: 0
+  - _name: UNIT_BARREL_ARTILLERY
+    _identity: 8
+    _icon: {fileID: 21300000, guid: 8cb6c6a18bede0748ba704f8af27a6ca, type: 3}
+    _description: Barrel artillery
+    _turnPoints: 4
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 4
+    _defense: 0
+  - _name: UNIT_MLRS
+    _identity: 9
+    _icon: {fileID: 21300000, guid: 14fdbade875a2b642a05c9bf2d92a8ca, type: 3}
+    _description: 
+    _turnPoints: 6
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 5
+    _defense: 0
+  - _name: BONUS_SMALL_BOX_AMMO
+    _identity: 51
+    _icon: {fileID: 21300000, guid: dfc127692ff8ce24a803c0c05b2c6f67, type: 3}
+    _description: BONUS_DESCRIPTION_AMMO
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 0
+    _magnitude: 2
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_MEDIUM_BOX_AMMO
+    _identity: 57
+    _icon: {fileID: 21300000, guid: dfc127692ff8ce24a803c0c05b2c6f67, type: 3}
+    _description: BONUS_DESCRIPTION_AMMO
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 0
+    _magnitude: 4
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_BIG_BOX_AMMO
+    _identity: 58
+    _icon: {fileID: 21300000, guid: dfc127692ff8ce24a803c0c05b2c6f67, type: 3}
+    _description: BONUS_DESCRIPTION_AMMO
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 0
+    _magnitude: 6
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_SMALL_SHELTER
+    _identity: 53
+    _icon: {fileID: 21300000, guid: 64ebe95673ffaf440a26529e443eaecb, type: 3}
+    _description: BONUS_DESCRIPTION_SHELTER
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 2
+    _magnitude: 2
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_MEDIUM_SHELTER
+    _identity: 59
+    _icon: {fileID: 21300000, guid: 64ebe95673ffaf440a26529e443eaecb, type: 3}
+    _description: BONUS_DESCRIPTION_SHELTER
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 2
+    _magnitude: 3
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_BIG_SHELTER
+    _identity: 60
+    _icon: {fileID: 21300000, guid: 64ebe95673ffaf440a26529e443eaecb, type: 3}
+    _description: BONUS_DESCRIPTION_SHELTER
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 2
+    _magnitude: 5
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_MEDICINE
+    _identity: 52
+    _icon: {fileID: 21300000, guid: 4715796645f99aa4b8b54a42c47a69dc, type: 3}
+    _description: BONUS_DESCRIPTION_MEDICINE
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 1
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_ACCURACY
+    _identity: 54
+    _icon: {fileID: 21300000, guid: f6851c87a711e9d478b7005713976caf, type: 3}
+    _description: BONUS_DESCRIPTION_ACCURACY
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 3
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_GRENADE_LAUNCHER
+    _identity: 55
+    _icon: {fileID: 21300000, guid: 3f42b642873f2fc40b86fe703c84b811, type: 3}
+    _description: BONUS_DESCRIPTION_GRENADE_LAUNCHER
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 4
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
+  - _name: BONUS_REPAIR_KIT
+    _identity: 56
+    _icon: {fileID: 21300000, guid: ad5335cebc68df542a446c060c528e5b, type: 3}
+    _description: BONUS_DESCRIPTION_REPAIR_KIT
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 5
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 2
+    _defense: 0
