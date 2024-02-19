@@ -30,7 +30,7 @@ namespace UralHedgehog
         private bool _init;
         
         private Settings _settings;
-        private Player _player;
+        protected Player _player;
 
         protected void Run()
         {

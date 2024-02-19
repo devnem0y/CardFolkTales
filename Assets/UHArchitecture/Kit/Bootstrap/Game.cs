@@ -15,6 +15,8 @@ namespace UralHedgehog
         private bool _isFirstLaunch;
         private bool _isBegin;
 
+        public IPlayer Player => _player;
+
         private void Awake()
         {
             Instance = this;
