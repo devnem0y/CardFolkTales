@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace UralHedgehog
 {
@@ -13,6 +14,8 @@ namespace UralHedgehog
         
         public List<CardData> Deck;
         public List<CardData> Collection;
+        
+        [HideInInspector] public List<bool> TutorialsData;
 
         public PlayerData(PlayerData data)
         {
@@ -23,9 +26,10 @@ namespace UralHedgehog
             Hard = data.Hard;
             Deck = data.Deck;
             Collection = data.Collection;
+            TutorialsData = data.TutorialsData;
         }
     
-        public PlayerData(string name, int level, int exp, int soft, int hard, List<CardData> deck, List<CardData> collection)
+        public PlayerData(string name, int level, int exp, int soft, int hard, List<CardData> deck, List<CardData> collection, List<bool> tutorialsData)
         {
             Name = name;
             Level = level;
@@ -34,6 +38,7 @@ namespace UralHedgehog
             Hard = hard;
             Deck = deck;
             Collection = collection;
+            TutorialsData = tutorialsData;
         }
     }
 }

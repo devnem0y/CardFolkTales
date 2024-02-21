@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83175debf1a9e04c99502509b2a647f, type: 3}
+  m_Name: RandomBotsStorage_2
+  m_EditorClassIdentifier: 
+  _bots:
+  - _cardDeck:
+    - Id: 1
+    - Id: 4
+    - Id: 55
+    - Id: 4
+    - Id: 56
+    - Id: 51
+  - _cardDeck:
+    - Id: 3
+    - Id: 1
+    - Id: 4
+    - Id: 4
+    - Id: 53
+    - Id: 54
+    - Id: 56
+  - _cardDeck:
+    - Id: 1
+    - Id: 1
+    - Id: 7
+    - Id: 53
+    - Id: 52
+    - Id: 57
+  - _cardDeck:
+    - Id: 5
+    - Id: 1
+    - Id: 1
+    - Id: 53
+    - Id: 52
+  - _cardDeck:
+    - Id: 2
+    - Id: 4
+    - Id: 7
+    - Id: 54
+    - Id: 59
+    - Id: 51

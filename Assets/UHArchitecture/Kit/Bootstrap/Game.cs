@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UralHedgehog.UI;
 
@@ -11,10 +12,23 @@ namespace UralHedgehog
         [SerializeField] private SpriteRenderer _background;
         [SerializeField] private Sprite _bgMain;
         [SerializeField] private Sprite _bgBattle;
+        
+        [Space(5)] [Header("Хранилища (SO)")]
+        [SerializeField] private CardStorage _cardStorage;
+        [SerializeField] private BotsStorage _levelBotsStorage;
+        [SerializeField] private List<BotsStorage> _randomBotStorages;
+        //[SerializeField] private ProductStorage _productStorage;
+        [SerializeField] private TutorialStorage _tutorialStorage;
+        
+        [Space(5)] [Header("Диалоги для тутора (SO)")] 
+        [SerializeField] private List<DialogData> _tutorialsDialogsData;
+
+        private TutorialHandler _tutorialHandler;
 
         private bool _isFirstLaunch;
         private bool _isBegin;
 
+        public ITutorialHandler TutorialHandler => _tutorialHandler;
         public IPlayer Player => _player;
 
         private void Awake()
@@ -31,6 +45,7 @@ namespace UralHedgehog
         protected override void Initialization()
         {
             base.Initialization();
+            _tutorialHandler = new TutorialHandler(_player.TutorialsData, _tutorialStorage, _tutorialsDialogsData);
         }
 
         protected override void OnBegin()

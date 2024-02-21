@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections;
 using NaughtyAttributes;
 using TMPro;
@@ -97,12 +97,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         {
             if (IsCell) return;
             
-            Dispatcher.Send(Event.ON_CARD_SELECTED, _cardBase.UnitType);
+            //Dispatcher.Send(Event.ON_CARD_SELECTED, _cardBase.UnitType);
             DragSetup();
         }
         else
         {
-            Dispatcher.Send(Event.ON_CARD_SELECTED, _cardBase.BonusType);
+            //Dispatcher.Send(Event.ON_CARD_SELECTED, _cardBase.BonusType);
             DragSetup();
         }
     }
@@ -111,11 +111,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         if (_type == CardType.UNIT)
         {
-            if (!IsCell) _rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
+            //if (!IsCell) _rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
         }
         else
         {
-            _rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
+            //_rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
         }
     }
 
@@ -125,7 +125,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         
         if (_type == CardType.UNIT)
         {
-            Dispatcher.Send(Event.ON_CARD_DESELECT);
+            //Dispatcher.Send(Event.ON_CARD_DESELECT);
 
             if (!IsCell)
             {
@@ -191,7 +191,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 {
                     case CardType.UNIT:
                         IsCell = true;
-                        _audio.Play(Sound.USE_UNIT_CARD);
+                        //_audio.Play(Sound.USE_UNIT_CARD);
                         break;
                     case CardType.BONUS:
                     default:
@@ -203,7 +203,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 {
                     case CardType.UNIT:
                         IsCell = true;
-                        _audio.Play(Sound.USE_UNIT_CARD);
+                        //_audio.Play(Sound.USE_UNIT_CARD);
                         break;
                     case CardType.BONUS:
                         Destroyed();
@@ -227,7 +227,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 switch (_type)
                 {
                     case CardType.UNIT:
-                        _audio.Play(Sound.USE_UNIT_CARD);
+                        //_audio.Play(Sound.USE_UNIT_CARD);
                         break;
                     case CardType.BONUS:
                         AnimBonusCard(cell, callback);
@@ -240,7 +240,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 switch (_type)
                 {
                     case CardType.UNIT:
-                        _audio.Play(Sound.USE_UNIT_CARD);
+                        //_audio.Play(Sound.USE_UNIT_CARD);
                         break;
                     case CardType.BONUS:
                         Destroyed();
@@ -396,7 +396,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _animator.Play(ANIM_BONUS_DESTROY_NAME);
         var currentAnimationTime = _animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(currentAnimationTime - 0.2f);
-        _audio.Play(Sound.USE_BONUS_CARD);
+        //_audio.Play(Sound.USE_BONUS_CARD);
         yield return new WaitForSeconds(0.9f);
         callback?.Invoke();
         Destroyed();
@@ -438,24 +438,24 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             case UnitType.INFANTRY:
                 vfxName = "Explosion_1";
                 pos = transform.position;
-                sound = Sound.EXPLOSION_1;
+                //sound = Sound.EXPLOSION_1;
                 break;
             case UnitType.TANKS:
                 vfxName = "Explosion_2";
                 pos = new Vector2(position.x, position.y + 20);
-                sound = Sound.EXPLOSION_2;
+                //sound = Sound.EXPLOSION_2;
                 break;
             case UnitType.ARTILLERY:
                 vfxName = "Explosion_3";
                 pos = new Vector2(position.x, position.y + 17);
-                sound = Sound.EXPLOSION_3;
+                //sound = Sound.EXPLOSION_3;
                 break;
             default:
                 vfxName = "";
                 break;
         }
         
-        Game.Instance.VfxController.Play(vfxName, pos);
+        //Game.Instance.VfxController.Play(vfxName, pos);
         _audio.Play(sound);
     }
     
@@ -465,4 +465,4 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         yield return new WaitForSeconds(time);
         callback2?.Invoke();
     }
-}*/
+}

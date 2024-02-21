@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UralHedgehog;
+using UralHedgehog.UI;
 
 public class Player : PlayerBase, IPlayer
 {
@@ -10,6 +11,8 @@ public class Player : PlayerBase, IPlayer
 
     public int CountCardDeck => _deck.Count;
     public int CountCardCollection => _collection.Count;
+
+    public List<bool> TutorialsData { get; private set; }
     
     private readonly List<CardData> _deck;
     private readonly List<CardData> _collection;
@@ -28,6 +31,8 @@ public class Player : PlayerBase, IPlayer
         var soft = new Soft(data.Soft);
         var hard = new Hard(data.Hard);
         CountersAdd(soft, hard);
+
+        TutorialsData = data.TutorialsData;
     }
     
     public void AddCard(bool isDeck, Identity identity)
@@ -74,7 +79,8 @@ public class Player : PlayerBase, IPlayer
             soft,
             hard,
             _deck,
-            _collection
+            _collection,
+            TutorialsData
             );
     }
     

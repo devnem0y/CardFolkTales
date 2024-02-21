@@ -19,7 +19,7 @@ public class CardStorage : ScriptableObject
         return null;
     }
 
-    /*public GameObject InstantiateCard(int id, Transform t, RectTransform wrapper, Team team)
+    public GameObject InstantiateCard(int id, Transform t, RectTransform wrapper, Team team)
     {
         var cardBase = GetDataCardBase(id);
 
@@ -27,8 +27,8 @@ public class CardStorage : ScriptableObject
         
         var item = Instantiate(cardBase.Type == CardType.UNIT ? _prefabCardUnit : _prefabCardBonus, t);
         var card = item.GetComponent<Card>();
-        var colorTeam = Game.Instance.GetColorTeam(team);
-        card.Init(cardBase, colorTeam, wrapper, null);
+        //var colorTeam = Game.Instance.GetColorTeam(team);
+        //card.Init(cardBase, colorTeam, wrapper, null);
         return item;
     }
     
@@ -40,8 +40,8 @@ public class CardStorage : ScriptableObject
         
         var item = Instantiate(cardBase.Type == CardType.UNIT ? _prefabCardUnit : _prefabCardBonus, t);
         var card = item.GetComponent<Card>();
-        var colorTeam = Game.Instance.GetColorTeam(team);
-        card.Init(cardBase, colorTeam, wrapper, commander);
+        //var colorTeam = Game.Instance.GetColorTeam(team);
+        //card.Init(cardBase, colorTeam, wrapper, commander);
         return item;
-    }*/
+    }
 }

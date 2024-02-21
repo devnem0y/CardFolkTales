@@ -1,4 +1,3 @@
-/*
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -52,26 +51,26 @@ public class Unit
         {
             case Identity.Stormtroopers:
             case Identity.Special_forces:
-                sound = Sound.FIRE_INFANTRY_1;
+                //sound = Sound.FIRE_INFANTRY_1;
                 break;
             case Identity.Motor_rifle:
-                sound = Sound.FIRE_INFANTRY_2;
+                //sound = Sound.FIRE_INFANTRY_2;
                 break;
             case Identity.BMP:
-                sound = Sound.FIRE_TANK_1;
+                //sound = Sound.FIRE_TANK_1;
                 break;
             case Identity.Light_tank:
             case Identity.Heavy_tank:
-                sound = Sound.FIRE_TANK_2;
+                //sound = Sound.FIRE_TANK_2;
                 break;
             case Identity.Mortar:
-                sound = Sound.FIRE_ARTILLERY_1;
+                //sound = Sound.FIRE_ARTILLERY_1;
                 break;
             case Identity.Barrel_artillery:
-                sound = Sound.FIRE_ARTILLERY_2;
+                //sound = Sound.FIRE_ARTILLERY_2;
                 break;
             case Identity.MLRS:
-                sound = Sound.FIRE_ARTILLERY_3;
+                //sound = Sound.FIRE_ARTILLERY_3;
                 break;
         }
         
@@ -184,11 +183,11 @@ public class Unit
             case BonusType.DEFENSE:
                 Defense += bonus.Magnitude;
                 value = Defense;
-                if (Game.Instance.TutorialHandler.IsActualTutorialStep(0, 2))
+                /*if (Game.Instance.TutorialHandler.IsActualTutorialStep(0, 2))
                 {
                     Game.Instance.TutorialHandler.Complete(0, 2);
                     Dispatcher.Send(Event.ON_TUTOR_BUTTON_END_TURN_LOCK, true);
-                }
+                }*/
                 break;
             case BonusType.ACCURACY:
                 Accuracy = true;
@@ -203,7 +202,7 @@ public class Unit
         }
         
         OnSetBonus?.Invoke(bonus.Type, value, bonus.Magnitude);
-        if (audio != null) audio.Play(Sound.USE_BONUS_CARD);
+        //if (audio != null) audio.Play(Sound.USE_BONUS_CARD);
         cardBonus.Use(ControllerType.PLAYER);
     }
     
@@ -258,4 +257,3 @@ public class Unit
         callback?.Invoke();
     }
 }
-*/

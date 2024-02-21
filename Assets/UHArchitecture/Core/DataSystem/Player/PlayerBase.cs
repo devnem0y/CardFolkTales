@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace UralHedgehog
 {
-    public class PlayerBase : ISaver, ICounters
+    public class PlayerBase : TestAbstractController, ISaver, ICounters
     {
         public IData Data { get; protected set; }
 
