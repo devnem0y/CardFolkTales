@@ -1,6 +1,6 @@
 public enum UnitType
 {
-    INFANTRY = 0, // Пехота
-    TANKS = 1, // Танки
-    ARTILLERY = 2, // Арта
+    WARRIOR = 0, // Воин
+    ARCHER = 1, // Лучник
+    MAGICIAN = 2, // Волшебник / Колдун / Маг / Чародей
 }

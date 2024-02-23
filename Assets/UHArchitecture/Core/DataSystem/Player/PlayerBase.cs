@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace UralHedgehog
 {
-    public class PlayerBase : TestAbstractController, ISaver, ICounters
+    public class PlayerBase : Controller, ISaver, ICounters
     {
         public IData Data { get; protected set; }
 

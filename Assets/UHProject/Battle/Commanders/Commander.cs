@@ -1,8 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UralHedgehog;
-//using Event = UralHedgehog.Event;
 
 public class Commander : CommanderBase
 {
@@ -11,14 +9,14 @@ public class Commander : CommanderBase
     [SerializeField] private Battlefield _battlefield;
     [SerializeField] private RectTransform _wrapper;
 
-    [SerializeField] private Image _avatar;
+    //[SerializeField] private Image _avatar; //TODO: Аватара нет, в место него иконка кристалла (можно сделать по цветам)
     [SerializeField] private TMP_Text _lblTurnPoints;
     [SerializeField] private TMP_Text _lblBonusesCount;
     [SerializeField] private TMP_Text _lblUnitsCount;
     [SerializeField] private GameObject _maskPlayer;
     [SerializeField] private GameObject _maskField;
     
-    [SerializeField] private AudioComponent _audio;
+    //[SerializeField] private AudioComponent _audio; //TODO: Добавить звуки 
     
     public Hand HandUnits => _handUnits;
     public Hand HandBonuses => _handBonuses;
@@ -37,14 +35,14 @@ public class Commander : CommanderBase
 
     public void Win()
     {
-        //Dispatcher.Send(Event.ON_CHANGE_GAME_STATE, GameState.VICTORY);
+        Game.Instance.ChangeState(GameState.VICTORY);
         _maskPlayer.SetActive(true);
         _maskField.SetActive(true);
     }
 
     public void Lose()
     {
-        //Dispatcher.Send(Event.ON_CHANGE_GAME_STATE, GameState.DEFEAT);
+        Game.Instance.ChangeState(GameState.DEFEAT);
         _maskPlayer.SetActive(true);
         _maskField.SetActive(true);
     }
@@ -76,19 +74,19 @@ public class Commander : CommanderBase
         return true;
     }
 
-    public void LabelTurnPointsUpdate(Counter turnPoints)
+    public void LabelTurnPointsUpdate(int turnPoints)
     {
-        _lblTurnPoints.text = $"{turnPoints.Value}";
+        _lblTurnPoints.text = $"{turnPoints}";
     }
 
-    public void CardUse(ControllerType controllerType, Counter turnPoints, Deck deckUnits, Deck deckBonuses)
+    public void CardUse(ControllerType controllerType, int turnPoints, Deck deckUnits, Deck deckBonuses)
     {
         //_audio.Play(Sound.USE_UNIT_CARD);
         LabelTurnPointsUpdate(turnPoints);
         UpdateStateCards(controllerType, turnPoints, deckUnits, deckBonuses);
     }
     
-    public void IssueCard(ControllerType controllerType, Counter turnPoints, Deck deckUnits, Deck deckBonuses)
+    public void IssueCard(ControllerType controllerType, int turnPoints, Deck deckUnits, Deck deckBonuses)
     {
         var distUnits = DistributionOfCards(HandUnits, deckUnits);
         var distBonuses = DistributionOfCards(HandBonuses, deckBonuses);
@@ -105,7 +103,7 @@ public class Commander : CommanderBase
         }
     }
     
-    protected internal void UpdateStateCards(ControllerType controllerType, Counter turnPoints, Deck deckUnits, Deck deckBonuses)
+    protected internal void UpdateStateCards(ControllerType controllerType, int turnPoints, Deck deckUnits, Deck deckBonuses)
     {
         _lblUnitsCount.text = deckUnits.Count.ToString();
         _lblBonusesCount.text = deckBonuses.Count.ToString();
@@ -115,20 +113,20 @@ public class Commander : CommanderBase
         for (var i = 0; i < _handUnits.CardCount; i++)
         {
             var child = _handUnits.transform.GetChild(i);
-            child.GetComponent<Card>().StateUpdate(turnPoints.Value);
+            child.GetComponent<Card>().StateUpdate(turnPoints);
         }
 
         for (var i = 0; i < _handBonuses.CardCount; i++)
         {
             var child = _handBonuses.transform.GetChild(i);
-            child.GetComponent<Card>().StateUpdate(turnPoints.Value);
+            child.GetComponent<Card>().StateUpdate(turnPoints);
         }
     }
     
     private void InstantiateCard(CardBase card)
     {
         var t = card.Type == CardType.UNIT ? _handUnits.transform : _handBonuses.transform;
-        _cardStorage.InstantiateCard(card.Id, t, _wrapper, _team, this);
+        _cardStorage.InstantiateCard(card.Id, t, _wrapper, this);
     }
     
     private bool DistributionOfCards(Hand hand, Deck deck)

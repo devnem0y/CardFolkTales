@@ -80,22 +80,22 @@ public class FrontLine : MonoBehaviour
     {
         switch (unitType)
         {
-            case UnitType.INFANTRY:
-                var cell = EmptyCell(CellType.IT);
+            case UnitType.WARRIOR:
+                var cell = EmptyCell(CellType.WA);
                 if (cell != null) return cell;
                 break;
-            case UnitType.TANKS:
-                var cellIT = EmptyCell(CellType.IT);
-                var cellTA = EmptyCell(CellType.TA);
-                if (cellIT == null || cellTA == null) return cellIT != null ? cellIT : cellTA;
+            case UnitType.ARCHER:
+                var cellWA = EmptyCell(CellType.WA);
+                var cellAM = EmptyCell(CellType.AM);
+                if (cellWA == null || cellAM == null) return cellWA != null ? cellWA : cellAM;
                 var rnd = Random.Range(0, 11);
-                return rnd <= 5 ? cellIT : cellTA;
-            case UnitType.ARTILLERY:
-                var cellTAA = EmptyCell(CellType.TA);
-                var cellA = EmptyCell(CellType.A);
-                if (cellA == null || cellTAA == null) return cellA != null ? cellA : cellTAA;
+                return rnd <= 5 ? cellWA : cellAM;
+            case UnitType.MAGICIAN:
+                var cellAMM = EmptyCell(CellType.AM);
+                var cellM = EmptyCell(CellType.M);
+                if (cellM == null || cellAMM == null) return cellM != null ? cellM : cellAMM;
                 var rnd1 = Random.Range(0, 11);
-                return rnd1 <= 5 ? cellA : cellTAA;
+                return rnd1 <= 5 ? cellM : cellAMM;
             default:
                 throw new ArgumentOutOfRangeException(nameof(unitType), unitType, null);
         }

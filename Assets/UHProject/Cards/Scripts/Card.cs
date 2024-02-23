@@ -435,17 +435,17 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                         
         switch (_unit.Type)
         {
-            case UnitType.INFANTRY:
+            case UnitType.WARRIOR:
                 vfxName = "Explosion_1";
                 pos = transform.position;
                 //sound = Sound.EXPLOSION_1;
                 break;
-            case UnitType.TANKS:
+            case UnitType.ARCHER:
                 vfxName = "Explosion_2";
                 pos = new Vector2(position.x, position.y + 20);
                 //sound = Sound.EXPLOSION_2;
                 break;
-            case UnitType.ARTILLERY:
+            case UnitType.MAGICIAN:
                 vfxName = "Explosion_3";
                 pos = new Vector2(position.x, position.y + 17);
                 //sound = Sound.EXPLOSION_3;

@@ -76,7 +76,7 @@ public class Unit
         
         OnDealsDamage?.Invoke(controllerType, sound);
         
-        if (Type == UnitType.INFANTRY && unit.Type != UnitType.INFANTRY)
+        if (Type == UnitType.WARRIOR && unit.Type != UnitType.WARRIOR)
         {
             if (ArmorPenetration) unit.DamageCalculation(Attack, Accuracy);
             else OnFail?.Invoke();
@@ -125,7 +125,7 @@ public class Unit
 
         if (Hp < _maxHp && Hp != 0)
         {
-            NeedBonuses.Add( Type == UnitType.INFANTRY ? BonusType.MEDICINE : BonusType.REPAIR_KIT);
+            NeedBonuses.Add( Type == UnitType.WARRIOR ? BonusType.MEDICINE : BonusType.REPAIR_KIT);
         }
         
         if (Hp != 0) return;
@@ -183,11 +183,11 @@ public class Unit
             case BonusType.DEFENSE:
                 Defense += bonus.Magnitude;
                 value = Defense;
-                /*if (Game.Instance.TutorialHandler.IsActualTutorialStep(0, 2))
+                if (Game.Instance.TutorialHandler.IsActualTutorialStep(0, 2))
                 {
                     Game.Instance.TutorialHandler.Complete(0, 2);
-                    Dispatcher.Send(Event.ON_TUTOR_BUTTON_END_TURN_LOCK, true);
-                }*/
+                    Dispatcher.Send(EventD.ON_TUTOR_BUTTON_END_TURN_LOCK, true);
+                }
                 break;
             case BonusType.ACCURACY:
                 Accuracy = true;
@@ -211,16 +211,16 @@ public class Unit
         switch (bonusType)
         {
             case BonusType.ARMOR_PENETRATION:
-                IsValid = Type == UnitType.INFANTRY && !ArmorPenetration;
+                IsValid = Type == UnitType.WARRIOR && !ArmorPenetration;
                 break;
             case BonusType.MEDICINE:
-                IsValid = Type == UnitType.INFANTRY && Hp < _maxHp;
+                IsValid = Type == UnitType.WARRIOR && Hp < _maxHp;
                 break;
             case BonusType.ACCURACY:
                 IsValid = !Accuracy;
                 break;
             case BonusType.REPAIR_KIT:
-                IsValid = Type != UnitType.INFANTRY && Hp < _maxHp;
+                IsValid = Type != UnitType.WARRIOR && Hp < _maxHp;
                 break;
             case BonusType.AMMUNITION:
             case BonusType.DEFENSE:
@@ -248,7 +248,7 @@ public class Unit
             BonusType.DEFENSE
         };
         
-        if (Type == UnitType.INFANTRY) NeedBonuses.Add(BonusType.ARMOR_PENETRATION);
+        if (Type == UnitType.WARRIOR) NeedBonuses.Add(BonusType.ARMOR_PENETRATION);
     }
     
     private static IEnumerator AnimDelay(float timeDelay, Action callback)

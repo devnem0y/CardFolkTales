@@ -30,7 +30,7 @@ public class Bot : Controller
         _deckUnits = new Deck(_cardStorage, _cardDeck, CardType.UNIT);
         _deckBonuses = new Deck(_cardStorage, _cardDeck, CardType.BONUS);
         _maxTurnPoints = 7;
-        //_turnPoints = new Counter(_maxTurnPoints);
+        _turnPoints = _maxTurnPoints;
         _commander.Init(_team, _cardStorage);
     }
 
@@ -103,17 +103,17 @@ public class Bot : Controller
         {
             if (!Game.Instance.TutorialHandler.IsCompletedTutorialStep(0, 0))
             {
-                //TODO: Установка штурмовика в ячейку
-                ApplyUnit(UnitType.INFANTRY);
+                //TODO: Установка Война в ячейку
+                ApplyUnit(UnitType.WARRIOR);
                 isFirstStepTutor = true;
             }
             else
             {
-                //TODO: Накидываем бонус лечения на штурмовика
-                //TODO: Устанавливаем БМП в ячейку
+                //TODO: Накидываем бонус лечения на Война
+                //TODO: Устанавливаем Лучника в ячейку
                 ApplyBonus(BonusType.MEDICINE);
                 yield return new WaitForSeconds(2f);
-                ApplyUnit(UnitType.TANKS);
+                ApplyUnit(UnitType.ARCHER);
             }
         }
 
@@ -150,12 +150,12 @@ public class Bot : Controller
 
         if (emptyCells == null) return false;
 
-        if (firstCard.TurnPoints <= _turnPoints.Value)
+        if (firstCard.TurnPoints <= _turnPoints)
         {
             cell1 = _commander.Battlefield.EnemyFrontLine.GetEmptyCellForUnit(firstCard.Get<Unit>().Type);
         }
 
-        if (secondCard != null && secondCard.TurnPoints <= _turnPoints.Value)
+        if (secondCard != null && secondCard.TurnPoints <= _turnPoints)
         {
             cell2 = _commander.Battlefield.EnemyFrontLine.GetEmptyCellForUnit(secondCard.Get<Unit>().Type);
         }
@@ -179,7 +179,7 @@ public class Bot : Controller
 
         cell.SetupCard(cardUnit, ControllerType.AI);
         cardUnit.CoverUp(false);
-        _turnPoints.Withdraw(cardUnit.TurnPoints);
+        _turnPoints -= cardUnit.TurnPoints;
         return true;
     }
 
@@ -211,7 +211,7 @@ public class Bot : Controller
         switch (cardBonuses.Count)
         {
             case 1:
-                if (cardBonuses[0].TurnPoints <= _turnPoints.Value)
+                if (cardBonuses[0].TurnPoints <= _turnPoints)
                 {
                     cardBonus = cardBonuses[0];
                 }
@@ -222,18 +222,18 @@ public class Bot : Controller
                 var rnd = Random.Range(0, 11);
                 if (rnd <= 5)
                 {
-                    if (cardBonuses[0].TurnPoints <= _turnPoints.Value)
+                    if (cardBonuses[0].TurnPoints <= _turnPoints)
                     {
                         cardBonus = cardBonuses[0];
                     }
-                    else if (cardBonuses[1].TurnPoints <= _turnPoints.Value)
+                    else if (cardBonuses[1].TurnPoints <= _turnPoints)
                     {
                         cardBonus = cardBonuses[1];
                     }
                 }
                 else
                 {
-                    if (cardBonuses[1].TurnPoints <= _turnPoints.Value)
+                    if (cardBonuses[1].TurnPoints <= _turnPoints)
                     {
                         cardBonus = cardBonuses[1];
                     }
@@ -248,7 +248,7 @@ public class Bot : Controller
         if (cardBonus != null) cell = _commander.Battlefield.EnemyFrontLine.GetCellsHasCardInUnitNeedBonus(cardBonus.Get<Bonus>().Type);
         if (cell == null) return false;
 
-        _turnPoints.Withdraw(cardBonus.TurnPoints);
+        _turnPoints -= cardBonus.TurnPoints;
         cardBonus.Use(ControllerType.AI, cell.transform, () => { cell.Card.Get<Unit>().SetupBonus(cardBonus); });
 
         return true;
@@ -265,7 +265,7 @@ public class Bot : Controller
 
         cell.SetupCard(cardUnit, ControllerType.AI);
         cardUnit.CoverUp(false);
-        _turnPoints.Withdraw(cardUnit.TurnPoints);
+        _turnPoints -= cardUnit.TurnPoints;
     }
 
     private void ApplyBonus(BonusType bonusType)
@@ -277,7 +277,11 @@ public class Bot : Controller
         if (cardBonus != null) cell = _commander.Battlefield.EnemyFrontLine.GetCellsHasCardInUnitNeedBonus(cardBonus.Get<Bonus>().Type);
         if (cell == null) return;
 
-        _turnPoints.Withdraw(cardBonus.TurnPoints);
+        _turnPoints -= cardBonus.TurnPoints;
         cardBonus.Use(ControllerType.AI, cell.transform, () => { cell.Card.Get<Unit>().SetupBonus(cardBonus); });
     }
+    
+    /*WarriorArcher
+    ArcherMagician
+    Magician*/
 }

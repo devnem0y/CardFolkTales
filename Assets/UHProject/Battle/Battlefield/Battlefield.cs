@@ -9,16 +9,16 @@ public class Battlefield : MonoBehaviour
     [SerializeField] private FrontLine _enemyFrontLine;
     public FrontLine EnemyFrontLine => _enemyFrontLine;
 
-    protected void Subscribe()
+    private void Awake()
     {
-        /*Dispatcher.OnCardSelected += CardSelected;
-        Dispatcher.OnCardDeselect += CardDeselect;*/
+        Dispatcher.OnCardSelected += CardSelected;
+        Dispatcher.OnCardDeselect += CardDeselect;
     }
 
-    protected void Unsubscribe()
+    private void OnDestroy()
     {
-        /*Dispatcher.OnCardSelected -= CardSelected;
-        Dispatcher.OnCardDeselect -= CardDeselect;*/
+        Dispatcher.OnCardSelected -= CardSelected;
+        Dispatcher.OnCardDeselect -= CardDeselect;
     }
     
     private void CardSelected(object arg)

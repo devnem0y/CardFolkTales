@@ -29,6 +29,7 @@ namespace UralHedgehog
         private bool _isBegin;
 
         public ITutorialHandler TutorialHandler => _tutorialHandler;
+        public List<DialogData> TutorialsDialogsData => _tutorialsDialogsData;
         public IPlayer Player => _player;
 
         private void Awake()

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UralHedgehog;
-//using Event = UralHedgehog.Event;
 
 public class Cell : MonoBehaviour, IDropHandler
 {
@@ -30,7 +29,7 @@ public class Cell : MonoBehaviour, IDropHandler
 
         SetupCard(card, ControllerType.PLAYER);
 
-        /*if (Game.Instance.TutorialHandler.IsActualTutorialStep(0, 1)) // Второй шаг тутора ставим бмп
+        if (Game.Instance.TutorialHandler.IsActualTutorialStep(0, 1)) // Второй шаг тутора ставим бмп
         {
             Game.Instance.TutorialHandler.Complete(0, 1);
             new Dialog(Game.Instance.TutorialsDialogsData[2]);
@@ -40,8 +39,8 @@ public class Cell : MonoBehaviour, IDropHandler
         {
             Game.Instance.TutorialHandler.Complete(0, 0);
             new Dialog(Game.Instance.TutorialsDialogsData[3], 
-                () => Dispatcher.Send(Event.ON_TUTOR_BUTTON_END_TURN_LOCK, true));
-        }*/
+                () => Dispatcher.Send(EventD.ON_TUTOR_BUTTON_END_TURN_LOCK, true));
+        }
     }
     
     public void SetupCard(Card card, ControllerType controllerType)
@@ -77,9 +76,9 @@ public class Cell : MonoBehaviour, IDropHandler
     {
         IsValid = unitType switch
         {
-            UnitType.INFANTRY => _type == CellType.IT,
-            UnitType.TANKS => _type is CellType.IT or CellType.TA,
-            UnitType.ARTILLERY => _type is CellType.TA or CellType.A,
+            UnitType.WARRIOR => _type == CellType.WA,
+            UnitType.ARCHER => _type is CellType.WA or CellType.AM,
+            UnitType.MAGICIAN => _type is CellType.AM or CellType.M,
             _ => throw new ArgumentOutOfRangeException(nameof(unitType), unitType, null)
         };
 
@@ -117,7 +116,7 @@ public class Cell : MonoBehaviour, IDropHandler
 
 public enum CellType
 {
-    IT = 0, // Пехота / Танки
-    TA = 1, // Танки / Арта
-    A = 2, // Арта
+    WA = 0, // Воин / Лучник
+    AM = 1, // Лучник / Волшебник
+    M = 2, // Волшебник / Колдун / Маг / Чародей
 }

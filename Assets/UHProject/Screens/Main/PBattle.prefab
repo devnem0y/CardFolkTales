@@ -884,6 +884,7 @@ GameObject:
   - component: {fileID: 6632978656084202621}
   - component: {fileID: 3732678907222042335}
   - component: {fileID: 3584361756241316400}
+  - component: {fileID: 5808027712652638404}
   m_Layer: 5
   m_Name: CardBonus
   m_TagString: Untagged
@@ -946,6 +947,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5808027712652638404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201791418428823806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71fda8e086b87346a59f93f5e65dc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &218859593855692627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,6 +1608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577978857312711157}
+  - component: {fileID: 7142392966555229646}
   m_Layer: 5
   m_Name: CellEnemy
   m_TagString: Untagged
@@ -1624,6 +1638,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -320}
   m_SizeDelta: {x: 1050, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7142392966555229646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620317332960440554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b9784ebf71c6a4e817f41e93090ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cells:
+  - {fileID: 2800901743803732261}
+  - {fileID: 4059882855759769278}
+  - {fileID: 2821014273155683568}
 --- !u!1 &624508367974293152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,8 +1957,9 @@ GameObject:
   - component: {fileID: 5114084703801166114}
   - component: {fileID: 8618915525533845671}
   - component: {fileID: 3435982315693631623}
+  - component: {fileID: 4511674868816504986}
   m_Layer: 5
-  m_Name: Cell_TanksArtillery
+  m_Name: Cell_ArcherMagician
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,6 +2023,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4511674868816504986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954387543424017345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3fff19d6406a4c9eb520b9f79d053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 1
+  _type: 1
+  _image: {fileID: 0}
+  _default: {r: 0, g: 0, b: 0, a: 0}
+  _lock: {r: 0, g: 0, b: 0, a: 0}
+  _available: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &994479071577300732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,8 +2127,9 @@ GameObject:
   - component: {fileID: 7839835540105115607}
   - component: {fileID: 1958397523272905439}
   - component: {fileID: 1204607285617032960}
+  - component: {fileID: 7403434585194381391}
   m_Layer: 5
-  m_Name: Cell_Artillery
+  m_Name: Cell_Magician
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2143,6 +2193,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7403434585194381391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028032061137258646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3fff19d6406a4c9eb520b9f79d053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 1
+  _type: 2
+  _image: {fileID: 0}
+  _default: {r: 0, g: 0, b: 0, a: 0}
+  _lock: {r: 0, g: 0, b: 0, a: 0}
+  _available: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1060840233524333711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,8 +2329,9 @@ GameObject:
   - component: {fileID: 834987334798029884}
   - component: {fileID: 2911012249478693666}
   - component: {fileID: 150675953172589905}
+  - component: {fileID: 2821014273155683568}
   m_Layer: 5
-  m_Name: Cell_Artillery
+  m_Name: Cell_Magician
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2325,6 +2394,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2821014273155683568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064978997636344555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3fff19d6406a4c9eb520b9f79d053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 0
+  _type: 2
+  _image: {fileID: 0}
+  _default: {r: 0, g: 0, b: 0, a: 0}
+  _lock: {r: 0, g: 0, b: 0, a: 0}
+  _available: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1104511046970835096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,8 +4472,9 @@ GameObject:
   - component: {fileID: 6743721383457762020}
   - component: {fileID: 2097228326665726266}
   - component: {fileID: 71780474921372600}
+  - component: {fileID: 6928191263142258353}
   m_Layer: 5
-  m_Name: Cell_InfantryTanks
+  m_Name: Cell_WarriorArcher
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4450,6 +4538,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6928191263142258353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896724679275637568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3fff19d6406a4c9eb520b9f79d053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 1
+  _type: 0
+  _image: {fileID: 0}
+  _default: {r: 0, g: 0, b: 0, a: 0}
+  _lock: {r: 0, g: 0, b: 0, a: 0}
+  _available: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1915196737131784965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +5161,7 @@ GameObject:
   - component: {fileID: 8393100237888281816}
   - component: {fileID: 6761472693398344499}
   - component: {fileID: 2325024336380946851}
+  - component: {fileID: 5410982761965237030}
   m_Layer: 5
   m_Name: CardUnit
   m_TagString: Untagged
@@ -5115,6 +5222,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5410982761965237030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068438683580227470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71fda8e086b87346a59f93f5e65dc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2090621178707830269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,6 +5377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3726762773927325265}
+  - component: {fileID: 5155425561570116019}
   m_Layer: 5
   m_Name: CellPlayer
   m_TagString: Untagged
@@ -5287,6 +5407,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 323}
   m_SizeDelta: {x: 1050, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5155425561570116019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095552751311856380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b9784ebf71c6a4e817f41e93090ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cells:
+  - {fileID: 6928191263142258353}
+  - {fileID: 4511674868816504986}
+  - {fileID: 7403434585194381391}
 --- !u!1 &2095744583227875580
 GameObject:
   m_ObjectHideFlags: 0
@@ -10963,6 +11099,7 @@ GameObject:
   - component: {fileID: 1381600714985705694}
   - component: {fileID: 5685328518300399730}
   - component: {fileID: 5184176697219757005}
+  - component: {fileID: 4466123002613227127}
   m_Layer: 5
   m_Name: CardUnit
   m_TagString: Untagged
@@ -11025,6 +11162,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4466123002613227127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472797463525149862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71fda8e086b87346a59f93f5e65dc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4507332927310030425
 GameObject:
   m_ObjectHideFlags: 0
@@ -11374,6 +11523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6387157724695719695}
+  - component: {fileID: 3831229583325738451}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -11401,6 +11551,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 220}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &3831229583325738451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720617900698273633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36f977333d63e148a4d3f4c9f0e386f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handUnits: {fileID: 5410982761965237030}
+  _handBonuses: {fileID: 3129795010251082985}
+  _battlefield: {fileID: 3842503209555347116}
+  _wrapper: {fileID: 2245458247334852735}
+  _avatar: {fileID: 7866667167310599314}
+  _lblTurnPoints: {fileID: 8433233960743834142}
+  _lblBonusesCount: {fileID: 8541519555843917147}
+  _lblUnitsCount: {fileID: 2589335633286597731}
+  _maskPlayer: {fileID: 8573438152415993911}
+  _maskField: {fileID: 3429713068816820737}
 --- !u!1 &4739167877292236702
 GameObject:
   m_ObjectHideFlags: 0
@@ -12102,6 +12274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7888161315669446002}
+  - component: {fileID: 3842503209555347116}
   m_Layer: 5
   m_Name: Battlefield
   m_TagString: Untagged
@@ -12129,6 +12302,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3842503209555347116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880307658509790259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97efc699eabf6864cb4f4db441029816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerFrontLine: {fileID: 5155425561570116019}
+  _enemyFrontLine: {fileID: 7142392966555229646}
 --- !u!1 &4943519226286857979
 GameObject:
   m_ObjectHideFlags: 0
@@ -13165,8 +13352,9 @@ GameObject:
   - component: {fileID: 9172028781929991592}
   - component: {fileID: 4997429179729236146}
   - component: {fileID: 3794285899105254428}
+  - component: {fileID: 4059882855759769278}
   m_Layer: 5
-  m_Name: Cell_TanksArtillery
+  m_Name: Cell_ArcherMagician
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13229,6 +13417,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4059882855759769278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488806537784385924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3fff19d6406a4c9eb520b9f79d053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 0
+  _type: 1
+  _image: {fileID: 0}
+  _default: {r: 0, g: 0, b: 0, a: 0}
+  _lock: {r: 0, g: 0, b: 0, a: 0}
+  _available: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5586501429086866137
 GameObject:
   m_ObjectHideFlags: 0
@@ -14548,8 +14754,9 @@ GameObject:
   - component: {fileID: 7970406207351352008}
   - component: {fileID: 393403024505444137}
   - component: {fileID: 7147561234963788566}
+  - component: {fileID: 2800901743803732261}
   m_Layer: 5
-  m_Name: Cell_InfantryTanks
+  m_Name: Cell_WarriorArcher
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14612,6 +14819,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2800901743803732261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982125384945427837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3fff19d6406a4c9eb520b9f79d053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 0
+  _type: 0
+  _image: {fileID: 0}
+  _default: {r: 0, g: 0, b: 0, a: 0}
+  _lock: {r: 0, g: 0, b: 0, a: 0}
+  _available: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6021428593036702904
 GameObject:
   m_ObjectHideFlags: 0
@@ -20407,6 +20632,7 @@ GameObject:
   - component: {fileID: 3862250940130618394}
   - component: {fileID: 876324632574084947}
   - component: {fileID: 8717584895322591424}
+  - component: {fileID: 3129795010251082985}
   m_Layer: 5
   m_Name: CardBonus
   m_TagString: Untagged
@@ -20467,6 +20693,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3129795010251082985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646153194682736893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71fda8e086b87346a59f93f5e65dc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8719622379291712560
 GameObject:
   m_ObjectHideFlags: 0
@@ -20740,6 +20978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 844491728311829320}
+  - component: {fileID: 5462507783028574655}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -20767,6 +21006,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 340}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &5462507783028574655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836910187306158302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36f977333d63e148a4d3f4c9f0e386f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handUnits: {fileID: 4466123002613227127}
+  _handBonuses: {fileID: 5808027712652638404}
+  _battlefield: {fileID: 3842503209555347116}
+  _wrapper: {fileID: 8663577617566714224}
+  _avatar: {fileID: 8476938422468169099}
+  _lblTurnPoints: {fileID: 1097012514196670633}
+  _lblBonusesCount: {fileID: 3468051071144624074}
+  _lblUnitsCount: {fileID: 3331280929078299656}
+  _maskPlayer: {fileID: 8573438152415993911}
+  _maskField: {fileID: 3429713068816820737}
 --- !u!1 &8838814702138861517
 GameObject:
   m_ObjectHideFlags: 0

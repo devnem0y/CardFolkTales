@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UralHedgehog;
 
 public abstract class Controller
 {
@@ -15,8 +14,8 @@ public abstract class Controller
 
     protected ControllerType _controllerType;
     protected Team _team;
-    protected Counter _turnPoints;
     protected int _maxTurnPoints;
+    protected int _turnPoints;
     protected Commander _commander;
     protected Deck _deckUnits;
     protected Deck _deckBonuses;
@@ -85,8 +84,7 @@ public abstract class Controller
     protected void AddTurnPoints()
     {
         //TODO: Начисляем очки хода
-        //_turnPoints = new Counter(_maxTurnPoints); // Вариант 1 = начислить очков по максимуму
-        _turnPoints.Add(_maxTurnPoints); // Вариант 2 = начислить N очков
+        _turnPoints += _maxTurnPoints;
         _commander.LabelTurnPointsUpdate(_turnPoints);
     }
     
@@ -119,7 +117,7 @@ public abstract class Controller
     
     private void CardUse(CardBase cardBase)
     {
-        _turnPoints.Withdraw(cardBase.TurnPoints);
+        _turnPoints -= cardBase.TurnPoints;
         _commander.CardUse(_controllerType, _turnPoints, _deckUnits, _deckBonuses);
     }
     
