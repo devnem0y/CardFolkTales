@@ -519,6 +519,66 @@ PrefabInstance:
       propertyPath: _background
       value: 
       objectReference: {fileID: 1124812111}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _cardStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: fbecbaa248652154cbb05ea524979b3f, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: e85fbb74dc210204aafa96b30956f14c, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _levelBotsStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: 2076f0f34467ef74ea85453600a3c35a, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _randomBotStorages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _randomBotStorages.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b39eca5fdc4012442bbfe216b4e76e99, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 838ec4849b73b1241ad1a82007181258, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bb557f519e754b4ebd6e70fb3341f0e, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee3f103b2f2fc584980121959bb69f3f, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: f8f7ec904382fba4892950269781f645, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6cc4447d5b5ec8846bafc7079f9d2e5c, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c990f20ee3a2d348b1283f0b7e0e052, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: fc758ba76e030e946b043f983178be9f, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43e0fbac79c1726478bd458e90c5136e, type: 2}
+    - target: {fileID: 4825667196653231922, guid: 91fb1f8847c6f754392637c3a339266e, type: 3}
+      propertyPath: _tutorialsDialogsData.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e615809eb095ea48a97b3c20839e455, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
