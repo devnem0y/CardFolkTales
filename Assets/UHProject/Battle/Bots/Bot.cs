@@ -31,7 +31,7 @@ public class Bot : Controller
         _deckBonuses = new Deck(_cardStorage, _cardDeck, CardType.BONUS);
         _maxTurnPoints = 7;
         _turnPoints = _maxTurnPoints;
-        _commander.Init(_team, _cardStorage);
+        _commander.Init(_cardStorage);
     }
 
     public override void Turn()
@@ -111,7 +111,7 @@ public class Bot : Controller
             {
                 //TODO: Накидываем бонус лечения на Война
                 //TODO: Устанавливаем Лучника в ячейку
-                ApplyBonus(BonusType.MEDICINE);
+                ApplyBonus(BonusType.HEALTH);
                 yield return new WaitForSeconds(2f);
                 ApplyUnit(UnitType.ARCHER);
             }

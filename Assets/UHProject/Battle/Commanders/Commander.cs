@@ -26,9 +26,9 @@ public class Commander : CommanderBase
     private Team _team;
     private CardStorage _cardStorage;
 
-    public void Init(Team team, CardStorage cardStorage)
+    public void Init(CardStorage cardStorage)
     {
-        _team = team;
+        //_team = team;
         //_avatar.color = Game.Instance.GetColorTeam(_team);
         _cardStorage = cardStorage;
     }

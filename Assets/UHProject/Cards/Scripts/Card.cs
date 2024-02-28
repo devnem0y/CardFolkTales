@@ -339,7 +339,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             case BonusType.ARMOR_PENETRATION:
                 _paramGroupRight.SetVisible(MarkerType.ARMOR_PENETRATION, true);
                 break;
-            case BonusType.MEDICINE:
+            case BonusType.HEALTH:
                 _paramGroupLeft.GetMarker(MarkerType.HP).SetValue(value);
                 break;
             case BonusType.DEFENSE:
@@ -347,13 +347,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 _paramGroupLeft.GetMarker(MarkerType.DEFENSE)?.SetValue(value);
                 _paramGroupLeft.SetVisible(MarkerType.DEFENSE, value > 0);
                 break;
-            case BonusType.ACCURACY:
+            case BonusType.RAGE:
                 _paramGroupRight.SetVisible(MarkerType.ACCURACY, true);
                 break;
             case BonusType.REPAIR_KIT:
                 _paramGroupLeft.GetMarker(MarkerType.HP).SetValue(value);
                 break;
-            case BonusType.AMMUNITION:
+            case BonusType.STRENGTH:
                 if (delta > 0) AnimFlayText($"<sprite=2>+{delta}", FlyTextColor.GREEN);
                 _paramGroupRight.GetMarker(MarkerType.ATTACK).SetValue(value);
                 break;

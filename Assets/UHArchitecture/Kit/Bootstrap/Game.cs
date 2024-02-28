@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.RestService;
 using UnityEngine;
 using UralHedgehog.UI;
 
@@ -47,6 +48,7 @@ namespace UralHedgehog
         {
             base.Initialization();
             _tutorialHandler = new TutorialHandler(_player.TutorialsData, _tutorialStorage, _tutorialsDialogsData);
+            _player.SetCardStorage(_cardStorage);
         }
 
         protected override void OnBegin()

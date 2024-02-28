@@ -125,7 +125,7 @@ public class Unit
 
         if (Hp < _maxHp && Hp != 0)
         {
-            NeedBonuses.Add( Type == UnitType.WARRIOR ? BonusType.MEDICINE : BonusType.REPAIR_KIT);
+            NeedBonuses.Add( Type == UnitType.WARRIOR ? BonusType.HEALTH : BonusType.REPAIR_KIT);
         }
         
         if (Hp != 0) return;
@@ -166,14 +166,14 @@ public class Unit
         
         switch (bonus.Type)
         {
-            case BonusType.AMMUNITION:
+            case BonusType.STRENGTH:
                 Attack += bonus.Magnitude;
                 value = Attack;
                 break;
-            case BonusType.MEDICINE:
+            case BonusType.HEALTH:
                 Hp = _maxHp;
                 value = Hp;
-                NeedBonuses.Remove(BonusType.MEDICINE);
+                NeedBonuses.Remove(BonusType.HEALTH);
                 break;
             case BonusType.REPAIR_KIT:
                 Hp = _maxHp;
@@ -189,9 +189,9 @@ public class Unit
                     Dispatcher.Send(EventD.ON_TUTOR_BUTTON_END_TURN_LOCK, true);
                 }
                 break;
-            case BonusType.ACCURACY:
+            case BonusType.RAGE:
                 Accuracy = true;
-                NeedBonuses.Remove(BonusType.ACCURACY);
+                NeedBonuses.Remove(BonusType.RAGE);
                 break;
             case BonusType.ARMOR_PENETRATION:
                 ArmorPenetration = true;
@@ -213,16 +213,16 @@ public class Unit
             case BonusType.ARMOR_PENETRATION:
                 IsValid = Type == UnitType.WARRIOR && !ArmorPenetration;
                 break;
-            case BonusType.MEDICINE:
+            case BonusType.HEALTH:
                 IsValid = Type == UnitType.WARRIOR && Hp < _maxHp;
                 break;
-            case BonusType.ACCURACY:
+            case BonusType.RAGE:
                 IsValid = !Accuracy;
                 break;
             case BonusType.REPAIR_KIT:
                 IsValid = Type != UnitType.WARRIOR && Hp < _maxHp;
                 break;
-            case BonusType.AMMUNITION:
+            case BonusType.STRENGTH:
             case BonusType.DEFENSE:
             default:
                 IsValid = true;
@@ -243,8 +243,8 @@ public class Unit
     {
         NeedBonuses = new List<BonusType>
         {
-            BonusType.ACCURACY,
-            BonusType.AMMUNITION,
+            BonusType.RAGE,
+            BonusType.STRENGTH,
             BonusType.DEFENSE
         };
         

@@ -9,7 +9,7 @@
         public int CountCardDeck { get; }
         public int CountCardCollection { get; }
 
-        public void AddCard(bool isDeck, Identity identity);
-        public void RemoveCard(bool isDeck, Identity identity);
+        public void AddCard(Identity identity, Pocket pocket);
+        public void RemoveCard(Identity identity, Pocket pocket);
     }
 }
