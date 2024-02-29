@@ -16,4 +16,4 @@ MonoBehaviour:
   _settingsConfig: {fileID: 11400000, guid: 3717432aec38296439099b54c071d6de, type: 2}
   _settingsMock: {fileID: 11400000, guid: efa58e445dde79a4cac47422c36bef65, type: 2}
   _playerMock: {fileID: 11400000, guid: 6ef281ffb0eb3d84ebec8b4f3f5e412d, type: 2}
-  _takingMock: 1
+  _takingMock: 0

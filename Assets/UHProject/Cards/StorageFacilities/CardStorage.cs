@@ -29,7 +29,7 @@ public class CardStorage : ScriptableObject
         var card = item.GetComponent<Card>();
         //var colorTeam = Game.Instance.GetColorTeam(team);
         var colorTeam = Color.red; //TODO: Просто пока забиваем цвет
-        card.Init(cardBase, colorTeam, wrapper, null);
+        card.Init(cardBase, wrapper, null);
         return item;
     }
     
@@ -43,7 +43,7 @@ public class CardStorage : ScriptableObject
         var card = item.GetComponent<Card>();
         //var colorTeam = Game.Instance.GetColorTeam(team);
         var colorTeam = Color.red; //TODO: Просто пока забиваем цвет
-        card.Init(cardBase, colorTeam, wrapper, commander);
+        card.Init(cardBase, wrapper, commander);
         return item;
     }
 }

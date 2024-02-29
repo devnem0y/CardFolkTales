@@ -61,6 +61,7 @@ namespace UralHedgehog
             LocalizationManager = new LocalizationManager(_localizationConfig) { Language = _settings.Language };
             _settings.OnChangeLanguage += OnLocalize;
             AudioManager = new AudioManager(_audioMixer, _audioResources);
+            Debug.Log($"dsgsdgsg {_loader.UserInfo.PlayerData.Name}");
             _player = new Player(_loader.UserInfo.PlayerData);
             
             _init = true;

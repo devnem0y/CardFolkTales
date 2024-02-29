@@ -12,6 +12,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c2c40383486974db84dfc936aa13c5, type: 3}
   m_Name: CardStorage
   m_EditorClassIdentifier: 
-  _prefabCardUnit: {fileID: 0}
-  _prefabCardBonus: {fileID: 0}
-  _cards: []
+  _prefabCardUnit: {fileID: 2559735164362874994, guid: 13e8716bf8525b24cbaf706818667729, type: 3}
+  _prefabCardBonus: {fileID: 2559735164362874994, guid: 29c418ab95c8e3c4ea90647c81b2224a, type: 3}
+  _cards:
+  - _name: Warrior 1
+    _identity: 1
+    _icon: {fileID: 21300000, guid: 793523a695b646c45aeb776fa011017f, type: 3}
+    _description: Simple warrior
+    _turnPoints: 1
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 0
+    _hp: 2
+    _attack: 1
+    _defense: 1
+  - _name: Archer
+    _identity: 2
+    _icon: {fileID: 21300000, guid: 8aef767844bcc774b899e568c76e24a5, type: 3}
+    _description: Archer
+    _turnPoints: 3
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 1
+    _hp: 1
+    _attack: 2
+    _defense: 0
+  - _name: Magician
+    _identity: 3
+    _icon: {fileID: 21300000, guid: a94fb231c7e28ca449d950e9e7334d40, type: 3}
+    _description: Magician
+    _turnPoints: 5
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 3
+    _defense: 1
+  - _name: Magician dark
+    _identity: 4
+    _icon: {fileID: 21300000, guid: aa2916d7c53958c4890a73ffcb19cf60, type: 3}
+    _description: Magician dark
+    _turnPoints: 4
+    _type: 0
+    _bonusType: 0
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 4
+    _defense: 0
+  - _name: Attack
+    _identity: 51
+    _icon: {fileID: 21300000, guid: 6b5b2eb676721f6469dacd5d145e0a44, type: 3}
+    _description: Attack
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 0
+    _magnitude: 2
+    _unitType: 2
+    _hp: 2
+    _attack: 4
+    _defense: 0
+  - _name: Health
+    _identity: 52
+    _icon: {fileID: 21300000, guid: df4525b47acf3c740af65206f242570b, type: 3}
+    _description: Health
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 1
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 4
+    _defense: 0
+  - _name: Defense
+    _identity: 53
+    _icon: {fileID: 21300000, guid: 5c46553fb12c18649b7d10badbfbea4d, type: 3}
+    _description: Defense
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 2
+    _magnitude: 3
+    _unitType: 2
+    _hp: 2
+    _attack: 4
+    _defense: 0
+  - _name: Rage
+    _identity: 54
+    _icon: {fileID: 21300000, guid: 0b650bea3e5d0254c84fe053d472b3f0, type: 3}
+    _description: Rage
+    _turnPoints: 3
+    _type: 1
+    _bonusType: 3
+    _magnitude: 0
+    _unitType: 2
+    _hp: 2
+    _attack: 4
+    _defense: 0

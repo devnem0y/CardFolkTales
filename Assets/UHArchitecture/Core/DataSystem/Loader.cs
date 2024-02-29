@@ -47,6 +47,7 @@ namespace UralHedgehog
                 dateTimeLocal = userInfo.DateTime;
                 playerDataLocal = userInfo.PlayerData;
                 isLocal = true;
+                Debug.Log($"HAS-Local");
             }
 
             var myDataCloud = ""; //TODO: Строка из облака
@@ -59,9 +60,9 @@ namespace UralHedgehog
                 isCloud = true;
             }
 
-            switch (isLocal)
+            if (isLocal)
             {
-                case true when isCloud:
+                if (isCloud) 
                 {
                     var parseD1 = DateTime.Parse(dateTimeLocal, cultureInfo);
                     var parseD2 = DateTime.Parse(dateTimeCloud, cultureInfo);
@@ -73,26 +74,29 @@ namespace UralHedgehog
                         case < 0:
                             //TODO: Берем из облака
                             UserInfo = new UserInfo(playerDataCloud);
+                            Debug.Log($"Cloud");
                             break;
                         case 0:
                             //TODO: Берем из PlayerPrefs
                             UserInfo = new UserInfo(playerDataLocal);
+                            Debug.Log($"Local");
                             break;
                         default:
                             //TODO: Берем из PlayerPrefs и записываем в облако
                             UserInfo = new UserInfo(playerDataLocal);
                             //Game.Instance.SaveUser(true);
+                            Debug.Log($"Local to cloud");
                             break;
                     }
-
-                    break;
                 }
-                case true:
+                else
+                {
+                    //TODO: Берем из PlayerPrefs и записываем в облако
                     UserInfo = new UserInfo(playerDataLocal);
-                    break;
-                default:
-                    UserInfo = new UserInfo(playerDataCloud);
-                    break;
+                    //Game.Instance.SaveUser(true);
+                    Debug.Log($"D - Local to cloud");
+                }
+                    
             }
 
             #endregion

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.RestService;
 using UnityEngine;
 using UralHedgehog.UI;
+using Random = UnityEngine.Random;
 
 namespace UralHedgehog
 {
@@ -13,6 +14,7 @@ namespace UralHedgehog
         [SerializeField] private SpriteRenderer _background;
         [SerializeField] private Sprite _bgMain;
         [SerializeField] private Sprite _bgBattle;
+        [SerializeField] private Canvas _battleCanvas;
         
         [Space(5)] [Header("Хранилища (SO)")]
         [SerializeField] private CardStorage _cardStorage;
@@ -32,6 +34,8 @@ namespace UralHedgehog
         public ITutorialHandler TutorialHandler => _tutorialHandler;
         public List<DialogData> TutorialsDialogsData => _tutorialsDialogsData;
         public IPlayer Player => _player;
+        
+        public float CanvasScale => _battleCanvas.scaleFactor;
 
         private void Awake()
         {
@@ -107,6 +111,11 @@ namespace UralHedgehog
             }
         }
 
+        public void SetBattleCanvas(Canvas canvas)
+        {
+            _battleCanvas = canvas;
+        }
+
         private void Update()
         {
             if (_isBegin)
@@ -129,9 +138,10 @@ namespace UralHedgehog
             UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pMainBottom);
         }
 
-        private static void ScreenBattle(bool show)
+        private void ScreenBattle(bool show)
         {
-            var pBattle = new Data(nameof(PBattle));
+            var bot = new Bot(_randomBotStorages[0].Bots[Random.Range(0, _randomBotStorages.Count - 1)], _cardStorage);
+            var pBattle = new Data(nameof(PBattle), _player, bot);
             
             UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pBattle);
         }

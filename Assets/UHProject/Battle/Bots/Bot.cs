@@ -13,13 +13,11 @@ public class Bot : Controller
 
     private Coroutine _routineBattle;
 
-    public Bot(BotData data, Team playerTeam, CardStorage cardStorage)
+    public Bot(BotData data, CardStorage cardStorage)
     {
         _cardStorage = cardStorage;
         _controllerType = ControllerType.AI;
         _cardDeck = new List<CardData>(data.CardDeck);
-
-        SetTeam(playerTeam);
 
         IsAttacker = true;
     }

@@ -24,6 +24,7 @@ public enum MarkerType
     HP = 0,
     DEFENSE = 1,
     ATTACK = 2,
-    ACCURACY = 3,
+    RAGE = 3,
+    
     ARMOR_PENETRATION = 4,
 }

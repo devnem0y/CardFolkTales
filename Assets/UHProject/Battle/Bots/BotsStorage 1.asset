@@ -12,4 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c6eec89f0858f4f989551e3c6fc513, type: 3}
   m_Name: BotsStorage 1
   m_EditorClassIdentifier: 
-  _bots: []
+  _bots:
+  - _cardDeck:
+    - Id: 1
+    - Id: 3
+    - Id: 1
+    - Id: 52
+    - Id: 51
+  - _cardDeck:
+    - Id: 1
+    - Id: 3
+    - Id: 52
+    - Id: 52
+    - Id: 54
+    - Id: 4
+  - _cardDeck:
+    - Id: 4
+    - Id: 3
+    - Id: 52
+    - Id: 53
+    - Id: 54
+    - Id: 53
+    - Id: 4
+    - Id: 1

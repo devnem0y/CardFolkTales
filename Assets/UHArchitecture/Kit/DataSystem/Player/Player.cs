@@ -22,13 +22,20 @@ public class Player : PlayerBase, IPlayer
 
     public Player(PlayerData data)
     {
-        Data = data;
+        Data = new PlayerData(data);
 
         Name = data.Name;
+        Debug.Log($"{data.Name}");
         Level = data.Level;
         Exp = data.Exp;
 
         _deck = new List<CardData>(data.Deck);
+
+        foreach (var card in _deck)
+        {
+            Debug.Log(card.Id);
+        }
+        
         _collection = new List<CardData>(data.Collection);
         
         var soft = new Soft(data.Soft);

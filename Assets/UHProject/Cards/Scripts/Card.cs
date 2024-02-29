@@ -4,6 +4,7 @@ using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UralHedgehog;
 
@@ -21,16 +22,15 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] private Image _grayMask;
     [SerializeField] private TMP_Text _name;
     [SerializeField] private TMP_Text _lblTurnPoints;
+    [SerializeField] private TMP_Text _lblDescription;
     
-    [SerializeField, ShowIf(nameof(_type), CardType.BONUS), AllowNesting]
-    private TMP_Text _lblDescription;
     [SerializeField, ShowIf(nameof(_type), CardType.UNIT), AllowNesting]
-    private ParamGroup _paramGroupLeft;
+    private ParamGroup _paramGroupDefault;
     [SerializeField, ShowIf(nameof(_type), CardType.UNIT), AllowNesting]
-    private ParamGroup _paramGroupRight;
+    private ParamGroup _paramGroupBonus;
     
-    [SerializeField] private FlyText vfx;
-    [SerializeField] private AudioComponent _audio;
+    //[SerializeField] private FlyText vfx;
+    //[SerializeField] private AudioComponent _audio;
 
     private CommanderBase _commander;
     private CardBase _cardBase;
@@ -44,7 +44,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public bool IsCell { get; private set; }
     public int TurnPoints { get; private set; }
 
-    public void Init(CardBase cardBase, Color colorTeam, RectTransform rectTransformTmp, CommanderBase commander)
+    public void Init(CardBase cardBase, RectTransform rectTransformTmp, CommanderBase commander)
     {
         _commander = commander;
         _cardBase = cardBase;
@@ -55,16 +55,16 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _name.GetComponent<LocalizedTextMP>().Key = _cardBase.Name;
         _lblTurnPoints.text = $"{TurnPoints}";
         _icon.sprite = _cardBase.Icon;
-        _cover.color = colorTeam;
-        if (_cardBase.Type == CardType.UNIT) _icon.color = colorTeam;
+        //_cover.color = colorTeam;
+        //if (_cardBase.Type == CardType.UNIT) _icon.color = colorTeam;
 
         if (_lblDescription != null)
         {
             var d1 = Game.Instance.LocalizationManager.GetTranslate(_cardBase.Description);
-            _lblDescription.text = _cardBase.Magnitude > 0 ? $"{d1}\n+{_cardBase.Magnitude}" : $"<size=9>{d1}";
+            _lblDescription.text = _cardBase.Magnitude > 0 ? $"{d1}\n+{_cardBase.Magnitude}" : $"{d1}"; // <size=9>
             var localizeText = _lblDescription.GetComponent<LocalizedTextMP>();
             if (_cardBase.Magnitude > 0) localizeText.Param = $"+{_cardBase.Magnitude}";
-            else localizeText.Prefix = "<size=9>";
+            else localizeText.Prefix = ""; // <size=9>
             localizeText.Key = _cardBase.Description;
         }
 
@@ -97,25 +97,26 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         {
             if (IsCell) return;
             
-            //Dispatcher.Send(Event.ON_CARD_SELECTED, _cardBase.UnitType);
+            Dispatcher.Send(EventD.ON_CARD_SELECTED, _cardBase.UnitType);
             DragSetup();
         }
         else
         {
-            //Dispatcher.Send(Event.ON_CARD_SELECTED, _cardBase.BonusType);
+            Dispatcher.Send(EventD.ON_CARD_SELECTED, _cardBase.BonusType);
             DragSetup();
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        //TODO: Сделать Game.Instance.CanvasScale
         if (_type == CardType.UNIT)
         {
-            //if (!IsCell) _rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
+            if (!IsCell) _rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
         }
         else
         {
-            //_rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
+            _rectTransform.anchoredPosition += eventData.delta / Game.Instance.CanvasScale;
         }
     }
 
@@ -125,7 +126,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         
         if (_type == CardType.UNIT)
         {
-            //Dispatcher.Send(Event.ON_CARD_DESELECT);
+            Dispatcher.Send(EventD.ON_CARD_DESELECT);
 
             if (!IsCell)
             {
@@ -179,7 +180,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         if (bonus == null) return;
         
-        _unit.SetupBonus(card, _audio);
+        //_unit.SetupBonus(card, _audio);
     }
     
     public void Use(ControllerType controllerType)
@@ -287,13 +288,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private void CreateUnit(CardBase cardBase)
     {
         _unit = new Unit(cardBase);
-        _paramGroupLeft.GetMarker(MarkerType.HP).SetValue(cardBase.Hp);
-        _paramGroupRight.GetMarker(MarkerType.ATTACK).SetValue(cardBase.Attack);
+        _paramGroupDefault.GetMarker(MarkerType.HP).SetValue(cardBase.Hp);
+        _paramGroupDefault.GetMarker(MarkerType.ATTACK).SetValue(cardBase.Attack);
 
         if (cardBase.Defense > 0)
         {
-            _paramGroupLeft.GetMarker(MarkerType.DEFENSE)?.SetValue(cardBase.Defense);
-            _paramGroupLeft.SetVisible(MarkerType.DEFENSE, true);
+            _paramGroupBonus.GetMarker(MarkerType.DEFENSE)?.SetValue(cardBase.Defense);
+            _paramGroupBonus.SetVisible(MarkerType.DEFENSE, true);
         }
 
         _unit.CheckBonuses();
@@ -337,25 +338,25 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         switch (bonusType)
         {
             case BonusType.ARMOR_PENETRATION:
-                _paramGroupRight.SetVisible(MarkerType.ARMOR_PENETRATION, true);
+                _paramGroupBonus.SetVisible(MarkerType.ARMOR_PENETRATION, true);
                 break;
             case BonusType.HEALTH:
-                _paramGroupLeft.GetMarker(MarkerType.HP).SetValue(value);
+                _paramGroupDefault.GetMarker(MarkerType.HP).SetValue(value);
                 break;
             case BonusType.DEFENSE:
                 if (delta > 0) AnimFlayText($"<sprite=3>+{delta}", FlyTextColor.GREEN);
-                _paramGroupLeft.GetMarker(MarkerType.DEFENSE)?.SetValue(value);
-                _paramGroupLeft.SetVisible(MarkerType.DEFENSE, value > 0);
+                _paramGroupBonus.GetMarker(MarkerType.DEFENSE)?.SetValue(value);
+                _paramGroupBonus.SetVisible(MarkerType.DEFENSE, value > 0);
                 break;
             case BonusType.RAGE:
-                _paramGroupRight.SetVisible(MarkerType.ACCURACY, true);
+                _paramGroupBonus.SetVisible(MarkerType.RAGE, true);
                 break;
             case BonusType.REPAIR_KIT:
-                _paramGroupLeft.GetMarker(MarkerType.HP).SetValue(value);
+                _paramGroupDefault.GetMarker(MarkerType.HP).SetValue(value);
                 break;
             case BonusType.STRENGTH:
                 if (delta > 0) AnimFlayText($"<sprite=2>+{delta}", FlyTextColor.GREEN);
-                _paramGroupRight.GetMarker(MarkerType.ATTACK).SetValue(value);
+                _paramGroupDefault.GetMarker(MarkerType.ATTACK).SetValue(value);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -365,7 +366,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private void AnimationDealsDamage(ControllerType controllerType, Sound sound)
     {
         _animator.Play(controllerType == ControllerType.PLAYER ? "AttackPlayer" : "AttackEnemy");
-        _audio.Play(sound);
+        //_audio.Play(sound);
     }
 
     private void RollBack()
@@ -409,21 +410,21 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     private void AnimFlayText(string text, FlyTextColor textColor)
     {
-        var flyText = Instantiate(vfx, transform);
-        flyText.Set(text, textColor);
+        /*var flyText = Instantiate(vfx, transform);
+        flyText.Set(text, textColor);*/
     }
 
     private void MarkerHpUpdate(int hit, int hp)
     {
         AnimFlayText($"<sprite=0>-{hit}", FlyTextColor.RED);
-        _paramGroupLeft.GetMarker(MarkerType.HP).SetValue(hp);
+        _paramGroupDefault.GetMarker(MarkerType.HP).SetValue(hp);
     }
     
     private void AnimRemoveDefense(int hit, int defense)
     {
         AnimFlayText($"<sprite=3>-{hit}", FlyTextColor.GRAY);
-        _paramGroupLeft.GetMarker(MarkerType.DEFENSE)?.SetValue(defense);
-        _paramGroupLeft.SetVisible(MarkerType.DEFENSE, defense > 0);
+        _paramGroupBonus.GetMarker(MarkerType.DEFENSE)?.SetValue(defense);
+        _paramGroupBonus.SetVisible(MarkerType.DEFENSE, defense > 0);
     }
 
     private void SetupExplosionEffect()
@@ -456,7 +457,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         
         //Game.Instance.VfxController.Play(vfxName, pos);
-        _audio.Play(sound);
+        //_audio.Play(sound);
     }
     
     private static IEnumerator Delay(Action callback1, Action callback2, float time = 0.73f)

@@ -14,4 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     Name: User
+    Level: 1
+    Exp: 0
     Soft: 100
+    Hard: 0
+    Deck:
+    - Id: 1
+    - Id: 2
+    - Id: 4
+    - Id: 51
+    - Id: 52
+    - Id: 53
+    - Id: 54
+    - Id: 3
+    Collection: []
+    TutorialsData: 01010101

@@ -15,7 +15,7 @@ namespace UralHedgehog
         public List<CardData> Deck;
         public List<CardData> Collection;
         
-        [HideInInspector] public List<bool> TutorialsData;
+        /*[HideInInspector] */public List<bool> TutorialsData;
 
         public PlayerData(PlayerData data)
         {
