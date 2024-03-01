@@ -47,7 +47,6 @@ namespace UralHedgehog
                 dateTimeLocal = userInfo.DateTime;
                 playerDataLocal = userInfo.PlayerData;
                 isLocal = true;
-                Debug.Log($"HAS-Local");
             }
 
             var myDataCloud = ""; //TODO: Строка из облака
@@ -74,18 +73,15 @@ namespace UralHedgehog
                         case < 0:
                             //TODO: Берем из облака
                             UserInfo = new UserInfo(playerDataCloud);
-                            Debug.Log($"Cloud");
                             break;
                         case 0:
                             //TODO: Берем из PlayerPrefs
                             UserInfo = new UserInfo(playerDataLocal);
-                            Debug.Log($"Local");
                             break;
                         default:
                             //TODO: Берем из PlayerPrefs и записываем в облако
                             UserInfo = new UserInfo(playerDataLocal);
                             //Game.Instance.SaveUser(true);
-                            Debug.Log($"Local to cloud");
                             break;
                     }
                 }
@@ -94,19 +90,20 @@ namespace UralHedgehog
                     //TODO: Берем из PlayerPrefs и записываем в облако
                     UserInfo = new UserInfo(playerDataLocal);
                     //Game.Instance.SaveUser(true);
-                    Debug.Log($"D - Local to cloud");
                 }
-                    
             }
 
             #endregion
             
             #region Settings
 
+            var isSettings = false;
+            
             if (PlayerPrefs.HasKey(keySettings)) //Если есть сохраненные данные, достаем
             {
                 var path = PlayerPrefs.GetString(keySettings);
                 SettingsInfo = JsonUtility.FromJson<SettingsInfo>(path);
+                isSettings = true;
             }
             else
             {
@@ -120,8 +117,8 @@ namespace UralHedgehog
 
             if (_takingMock)
             {
-                UserInfo = new UserInfo(_playerMock.Data);
-                SettingsInfo = new SettingsInfo(_settingsMock.Data);
+                if (isLocal) UserInfo = new UserInfo(_playerMock.Data);
+                if (isSettings) SettingsInfo = new SettingsInfo(_settingsMock.Data);
             }
 #endif
             

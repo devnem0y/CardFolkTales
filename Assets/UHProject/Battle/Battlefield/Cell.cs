@@ -63,8 +63,8 @@ public class Cell : MonoBehaviour, IDropHandler
         rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
         rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
         rectTransform.pivot = new Vector2(0.5f, 0.5f);
-        rectTransform.sizeDelta = new Vector2(90f, 120f);
-        if (!_isPlayer) rectTransform.localScale = new Vector3(1f, 1f, 1f);
+        rectTransform.sizeDelta = new Vector2(180f, 250f);
+        /*if (!_isPlayer) */rectTransform.localScale = new Vector3(1.55f, 1.55f, 1.55f);
         Card.transform.localPosition = Vector3.zero;
         
         IsEmpty = false;

@@ -107,7 +107,7 @@ public class Bot : Controller
             }
             else
             {
-                //TODO: Накидываем бонус лечения на Война
+                //TODO: Накидываем бонус лечения на Воина
                 //TODO: Устанавливаем Лучника в ячейку
                 ApplyBonus(BonusType.HEALTH);
                 yield return new WaitForSeconds(2f);
@@ -278,8 +278,4 @@ public class Bot : Controller
         _turnPoints -= cardBonus.TurnPoints;
         cardBonus.Use(ControllerType.AI, cell.transform, () => { cell.Card.Get<Unit>().SetupBonus(cardBonus); });
     }
-    
-    /*WarriorArcher
-    ArcherMagician
-    Magician*/
 }

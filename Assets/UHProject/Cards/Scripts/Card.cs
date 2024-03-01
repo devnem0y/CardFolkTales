@@ -180,7 +180,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         if (bonus == null) return;
         
-        //_unit.SetupBonus(card, _audio);
+        //_unit.SetupBonus(card, _audio); //TODO: Заменить на это, когда вернем звуки
+        _unit.SetupBonus(card);
     }
     
     public void Use(ControllerType controllerType)
@@ -385,9 +386,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
         rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
         rectTransform.pivot = new Vector2(0.5f, 0.5f);
-        rectTransform.sizeDelta = new Vector2(90f, 120f);
+        rectTransform.sizeDelta = new Vector2(180f, 250f);
         transform.localPosition = Vector3.zero;
-        transform.localScale = new Vector3(1f, 1f, 1f);
+        transform.localScale = new Vector3(1.55f, 1.55f, 1.55f);
 
         StartCoroutine(AnimBonusCardDelay(callback));
     }
