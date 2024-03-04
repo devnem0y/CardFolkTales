@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1750178384797741311}
   - component: {fileID: 892713378526528709}
   - component: {fileID: 3123279451150650764}
-  - component: {fileID: 1990300112980923421}
+  - component: {fileID: 7760905599986821613}
   m_Layer: 5
   m_Name: 'Text '
   m_TagString: Untagged
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1990300112980923421
+--- !u!114 &7760905599986821613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 668079069718807791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5378cc9c5916641adcdf629285e49f, type: 3}
+  m_Script: {fileID: 11500000, guid: 919d120ba71fa2947997567d4945f395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _key: 
@@ -184,7 +184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 120}
+  m_SizeDelta: {x: 180, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &6849391830614303318
 Animator:

@@ -759,6 +759,7 @@ MonoBehaviour:
   _rectTransform: {fileID: 2162316591797270764}
   _canvasGroup: {fileID: 3238438795675598454}
   _icon: {fileID: 224417617647692754}
+  _iconAttack: {fileID: 1760596920329390507}
   _cover: {fileID: 7833695918137144963}
   _grayMask: {fileID: 8000458765542448482}
   _name: {fileID: 415823529844038939}
@@ -766,6 +767,11 @@ MonoBehaviour:
   _lblDescription: {fileID: 7822105451458836992}
   _paramGroupDefault: {fileID: 6689951700735955062}
   _paramGroupBonus: {fileID: 8484563843099854181}
+  _spritesUnitType:
+  - {fileID: 21300000, guid: 597e2fb417e1edd4b8177a3ce90d587f, type: 3}
+  - {fileID: 21300000, guid: ae80d098577f05647accf0e60866262b, type: 3}
+  - {fileID: 21300000, guid: 0cef706656db5ce4d94cb0a020125e99, type: 3}
+  vfx: {fileID: -6275934449442801635, guid: 3c04372d23034d4489d92b6d98aa6ee5, type: 3}
 --- !u!1 &2779753075643479819
 GameObject:
   m_ObjectHideFlags: 0

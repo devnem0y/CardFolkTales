@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Image _icon;
+    [SerializeField] private Image _iconAttack;
     [SerializeField] private Image _cover;
     [SerializeField] private Image _grayMask;
     [SerializeField] private TMP_Text _name;
@@ -28,8 +30,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private ParamGroup _paramGroupDefault;
     [SerializeField, ShowIf(nameof(_type), CardType.UNIT), AllowNesting]
     private ParamGroup _paramGroupBonus;
+    [SerializeField, ShowIf(nameof(_type), CardType.UNIT), AllowNesting]
+    private List<Sprite> _spritesUnitType; // 0 - w 1 - a 2 - m
     
-    //[SerializeField] private FlyText vfx;
+    [SerializeField] private FlyText vfx;
     //[SerializeField] private AudioComponent _audio;
 
     private CommanderBase _commander;
@@ -57,6 +61,16 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _icon.sprite = _cardBase.Icon;
         //_cover.color = colorTeam;
         //if (_cardBase.Type == CardType.UNIT) _icon.color = colorTeam;
+        if (_cardBase.Type == CardType.UNIT)
+        {
+            _iconAttack.sprite = _cardBase.UnitType switch
+            {
+                UnitType.WARRIOR => _spritesUnitType[0],
+                UnitType.ARCHER => _spritesUnitType[1],
+                UnitType.MAGICIAN => _spritesUnitType[2],
+                _ => _iconAttack.sprite
+            };
+        }
 
         if (_lblDescription != null)
         {
@@ -413,8 +427,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     private void AnimFlayText(string text, FlyTextColor textColor)
     {
-        /*var flyText = Instantiate(vfx, transform);
-        flyText.Set(text, textColor);*/
+        var flyText = Instantiate(vfx, transform);
+        flyText.Set(text, textColor);
     }
 
     private void MarkerHpUpdate(int hit, int hp)

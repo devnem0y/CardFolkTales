@@ -413,6 +413,7 @@ MonoBehaviour:
   _lblDescription: {fileID: 7822105451458836992}
   _paramGroupDefault: {fileID: 0}
   _paramGroupBonus: {fileID: 0}
+  vfx: {fileID: -6275934449442801635, guid: 3c04372d23034d4489d92b6d98aa6ee5, type: 3}
 --- !u!1 &2779753075643479819
 GameObject:
   m_ObjectHideFlags: 0
