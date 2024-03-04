@@ -177,7 +177,6 @@ public class Bot : Controller
 
         cell.SetupCard(cardUnit, ControllerType.AI);
         cardUnit.CoverUp(false);
-        _turnPoints -= cardUnit.TurnPoints;
         return true;
     }
 
@@ -246,7 +245,8 @@ public class Bot : Controller
         if (cardBonus != null) cell = _commander.Battlefield.EnemyFrontLine.GetCellsHasCardInUnitNeedBonus(cardBonus.Get<Bonus>().Type);
         if (cell == null) return false;
 
-        _turnPoints -= cardBonus.TurnPoints;
+        var result = _turnPoints - cardBonus.TurnPoints;
+        _turnPoints = result;
         cardBonus.Use(ControllerType.AI, cell.transform, () => { cell.Card.Get<Unit>().SetupBonus(cardBonus); });
 
         return true;
@@ -263,7 +263,6 @@ public class Bot : Controller
 
         cell.SetupCard(cardUnit, ControllerType.AI);
         cardUnit.CoverUp(false);
-        _turnPoints -= cardUnit.TurnPoints;
     }
 
     private void ApplyBonus(BonusType bonusType)
@@ -275,7 +274,8 @@ public class Bot : Controller
         if (cardBonus != null) cell = _commander.Battlefield.EnemyFrontLine.GetCellsHasCardInUnitNeedBonus(cardBonus.Get<Bonus>().Type);
         if (cell == null) return;
 
-        _turnPoints -= cardBonus.TurnPoints;
+        var result = _turnPoints - cardBonus.TurnPoints;
+        _turnPoints = result;
         cardBonus.Use(ControllerType.AI, cell.transform, () => { cell.Card.Get<Unit>().SetupBonus(cardBonus); });
     }
 }

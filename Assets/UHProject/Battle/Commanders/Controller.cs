@@ -117,7 +117,22 @@ public abstract class Controller
     
     private void CardUse(CardBase cardBase)
     {
-        _turnPoints -= cardBase.TurnPoints;
+        if (_controllerType == ControllerType.AI)
+        {
+            if (cardBase.Type == CardType.UNIT)
+            {
+                _turnPoints -= cardBase.TurnPoints;
+            }
+            else
+            {
+                _commander.LabelTurnPointsUpdate(_turnPoints);
+            }
+        }
+        else
+        {
+            _turnPoints -= cardBase.TurnPoints;
+        }
+        
         _commander.CardUse(_controllerType, _turnPoints, _deckUnits, _deckBonuses);
     }
     
