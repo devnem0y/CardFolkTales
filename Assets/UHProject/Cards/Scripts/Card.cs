@@ -284,6 +284,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _index = _rectTransform.GetSiblingIndex();
         _rectTransform.SetParent(_rectTransformTmp);
         _canvasGroup.blocksRaycasts = false;
+        transform.localScale = new Vector3(1.55f, 1.55f, 1.55f);
     }
 
     private void CreateUnit(CardBase cardBase)
@@ -372,6 +373,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     private void RollBack()
     {
+        transform.localScale = Vector3.one;
         _rectTransform.SetParent(_parent);
         if (_index == 0) _rectTransform.SetAsFirstSibling();
         else _rectTransform.SetAsLastSibling();
