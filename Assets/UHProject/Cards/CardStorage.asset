@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c2c40383486974db84dfc936aa13c5, type: 3}
   m_Name: CardStorage
   m_EditorClassIdentifier: 
-  _prefabCardUnit: {fileID: 2559735164362874994, guid: 13e8716bf8525b24cbaf706818667729, type: 3}
+  _prefabCardUnit: {fileID: 2559735164362874994, guid: 1ca5b93925f715f46b21a9f038265f72, type: 3}
   _prefabCardBonus: {fileID: 2559735164362874994, guid: 29c418ab95c8e3c4ea90647c81b2224a, type: 3}
   _cards:
   - _name: Warrior 1

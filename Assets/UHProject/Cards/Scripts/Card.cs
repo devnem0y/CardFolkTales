@@ -5,7 +5,6 @@ using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UralHedgehog;
 
@@ -23,6 +22,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] private Image _cover;
     [SerializeField] private Image _grayMask;
     [SerializeField] private TMP_Text _name;
+    [SerializeField] private CanvasGroup _pointsCG;
     [SerializeField] private TMP_Text _lblTurnPoints;
     [SerializeField] private TMP_Text _lblDescription;
     
@@ -197,7 +197,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         //_unit.SetupBonus(card, _audio); //TODO: Заменить на это, когда вернем звуки
         _unit.SetupBonus(card);
     }
-    
+
     public void Use(ControllerType controllerType)
     {
         switch (controllerType)
@@ -232,6 +232,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 throw new ArgumentOutOfRangeException(nameof(controllerType), controllerType, null);
         }
         
+        _pointsCG.alpha = 0f;
         _commander.InvokeCardUse(_cardBase);
     }
 
@@ -269,6 +270,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 throw new ArgumentOutOfRangeException(nameof(controllerType), controllerType, null);
         }
         
+        _pointsCG.alpha = 0f;
         _commander.InvokeCardUse(_cardBase);
     }
 
@@ -318,7 +320,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _unit.OnDestroyed += Destroyed;
         _unit.OnSetBonus += MarkerBonusUpdate;
         _unit.OnDealsDamage += AnimationDealsDamage;
-        _unit.OnFail += AnimFail;
+        //_unit.OnFail += AnimFail;
         _unit.OnTakingDamage += MarkerHpUpdate;
         _unit.OnRemoveDefense += AnimRemoveDefense;
     }
@@ -335,7 +337,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                     _unit.OnDestroyed -= Destroyed;
                     _unit.OnSetBonus -= MarkerBonusUpdate;
                     _unit.OnDealsDamage -= AnimationDealsDamage;
-                    _unit.OnFail -= AnimFail;
+                    //_unit.OnFail -= AnimFail;
                     _unit.OnTakingDamage -= MarkerHpUpdate;
                     _unit.OnRemoveDefense -= AnimRemoveDefense;
                     Destroy(gameObject);

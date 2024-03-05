@@ -18,7 +18,7 @@ public class Unit
 
     public event Action<BonusType, int, int> OnSetBonus;
     public event Action OnDestroyed;
-    public event Action OnFail;
+    //public event Action OnFail;
     public event Action<int, int> OnTakingDamage;
     public event Action<int, int> OnRemoveDefense;
     public event Action<ControllerType, Sound> OnDealsDamage;
@@ -75,16 +75,7 @@ public class Unit
         }
         
         OnDealsDamage?.Invoke(controllerType, sound);
-        
-        if (Type == UnitType.WARRIOR && unit.Type != UnitType.WARRIOR)
-        {
-            if (ArmorPenetration) unit.DamageCalculation(Attack, Accuracy);
-            else OnFail?.Invoke();
-        }
-        else
-        {
-            unit.DamageCalculation(Attack, Accuracy);
-        }
+        unit.DamageCalculation(Attack, Accuracy);
     }
 
     /// <summary>
@@ -125,7 +116,7 @@ public class Unit
 
         if (Hp < _maxHp && Hp != 0)
         {
-            NeedBonuses.Add( Type == UnitType.WARRIOR ? BonusType.HEALTH : BonusType.REPAIR_KIT);
+            NeedBonuses.Add(BonusType.HEALTH);
         }
         
         if (Hp != 0) return;
@@ -175,11 +166,6 @@ public class Unit
                 value = Hp;
                 NeedBonuses.Remove(BonusType.HEALTH);
                 break;
-            case BonusType.REPAIR_KIT:
-                Hp = _maxHp;
-                value = Hp;
-                NeedBonuses.Remove(BonusType.REPAIR_KIT);
-                break;
             case BonusType.DEFENSE:
                 Defense += bonus.Magnitude;
                 value = Defense;
@@ -192,10 +178,6 @@ public class Unit
             case BonusType.RAGE:
                 Accuracy = true;
                 NeedBonuses.Remove(BonusType.RAGE);
-                break;
-            case BonusType.ARMOR_PENETRATION:
-                ArmorPenetration = true;
-                NeedBonuses.Remove(BonusType.ARMOR_PENETRATION);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -210,17 +192,11 @@ public class Unit
     {
         switch (bonusType)
         {
-            case BonusType.ARMOR_PENETRATION:
-                IsValid = Type == UnitType.WARRIOR && !ArmorPenetration;
-                break;
             case BonusType.HEALTH:
-                IsValid = Type == UnitType.WARRIOR && Hp < _maxHp;
+                IsValid = Hp < _maxHp;
                 break;
             case BonusType.RAGE:
                 IsValid = !Accuracy;
-                break;
-            case BonusType.REPAIR_KIT:
-                IsValid = Type != UnitType.WARRIOR && Hp < _maxHp;
                 break;
             case BonusType.STRENGTH:
             case BonusType.DEFENSE:
@@ -247,8 +223,6 @@ public class Unit
             BonusType.STRENGTH,
             BonusType.DEFENSE
         };
-        
-        if (Type == UnitType.WARRIOR) NeedBonuses.Add(BonusType.ARMOR_PENETRATION);
     }
     
     private static IEnumerator AnimDelay(float timeDelay, Action callback)
