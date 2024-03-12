@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UralHedgehog;
 
 public abstract class Controller
 {
@@ -83,7 +84,6 @@ public abstract class Controller
     
     protected void AddTurnPoints()
     {
-        //TODO: Начисляем очки хода
         _turnPoints += _maxTurnPoints;
         _commander.LabelTurnPointsUpdate(_turnPoints);
     }

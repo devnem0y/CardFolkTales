@@ -5,6 +5,7 @@
         public string Name { get; }
         public int Level { get; }
         public int Exp { get; }
+        public int TurnPoints { get; }
         
         public int CountCardDeck { get; }
         public int CountCardCollection { get; }

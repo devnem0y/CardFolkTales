@@ -8,6 +8,7 @@ public class Player : PlayerBase, IPlayer
     public string Name { get; }
     public int Level { get; }
     public int Exp { get; }
+    public int TurnPoints => _turnPoints;
 
     public int CountCardDeck => _deck.Count;
     public int CountCardCollection => _collection.Count;

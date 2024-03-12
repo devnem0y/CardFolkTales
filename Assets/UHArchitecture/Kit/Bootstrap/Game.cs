@@ -30,6 +30,7 @@ namespace UralHedgehog
 
         private bool _isFirstLaunch;
         private bool _isBegin;
+        private bool _isBattle;
 
         public ITutorialHandler TutorialHandler => _tutorialHandler;
         public List<DialogData> TutorialsDialogsData => _tutorialsDialogsData;
@@ -96,16 +97,18 @@ namespace UralHedgehog
                     {
                         _background.sprite = _bgBattle;
                         ScreenMain(false);
+                        if (_isBattle) ScreenBattle(false);
                         ScreenBattle(true);
                     });
                     break;
                 case GameState.VICTORY:
                     Debug.Log("<color=yellow>Victory</color>");
+                    ShowPanelLoseWin();
                     break;
                 case GameState.DEFEAT:
                     Debug.Log("<color=yellow>Defeat</color>");
+                    ShowPanelLoseWin();
                     break;
-                
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -127,6 +130,14 @@ namespace UralHedgehog
                     ChangeState(GameState.MAIN);
                 }
             }
+            
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (GameState == GameState.PLAY)
+                {
+                    ChangeState(GameState.VICTORY);
+                }
+            }
         }
 
         private static void ScreenMain(bool show)
@@ -142,6 +153,8 @@ namespace UralHedgehog
         {
             var bot = new Bot(_randomBotStorages[0].Bots[Random.Range(0, _randomBotStorages.Count - 1)], _cardStorage);
             var pBattle = new Data(nameof(PBattle), _player, bot);
+
+            _isBattle = show;
             
             UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pBattle);
         }
@@ -150,6 +163,12 @@ namespace UralHedgehog
         {
             var pMenuData = new Data(nameof(PMenu));
             UIDispatcher.Send(show ? EventUI.SHOW_WIDGET : EventUI.HIDE_WIDGET, pMenuData);
+        }
+
+        private void ShowPanelLoseWin()
+        {
+            var pLoseWin = new Data(nameof(PLoseWin));
+            UIDispatcher.Send(EventUI.SHOW_WIDGET, pLoseWin);
         }
     }
 }

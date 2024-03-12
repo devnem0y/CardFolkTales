@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UralHedgehog;
 
 public class BattleManager
@@ -36,6 +37,12 @@ public class BattleManager
             if (_enemy.IsAttacker) _enemy.Turn();
         });
     }
+    
+    public void Unsubscribe()
+    {
+        _player.OnTurnDone -= BattleRound;
+        _enemy.OnTurnDone -= BattleRound;
+    }
 
     private void BattleRound(ControllerType controllerType)
     {
@@ -46,8 +53,7 @@ public class BattleManager
 
                 if (_enemy.IsLose)
                 {
-                    _player.OnTurnDone -= BattleRound;
-                    _enemy.OnTurnDone -= BattleRound;
+                    Unsubscribe();
                     //Dispatcher.OnLeaveFight -= PlayerLose;
                     _player.Win();
                     _enemy.EndBattle();
@@ -81,8 +87,7 @@ public class BattleManager
 
     private void PlayerLose()
     {
-        _player.OnTurnDone -= BattleRound;
-        _enemy.OnTurnDone -= BattleRound;
+        Unsubscribe();
         //Dispatcher.OnLeaveFight -= PlayerLose;
         _player.Lose();
     }

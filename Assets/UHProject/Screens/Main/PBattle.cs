@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UralHedgehog;
@@ -34,6 +35,9 @@ public class PBattle : Widget
     private void OnDestroy()
     {
         Dispatcher.OnTutorButtonEndTurnLock -= OnTurnButtonTutorReaction;
+        _battleManager.Unsubscribe();
+        
+        if (_controller1 != null) _controller1.OnEndBattle -= HideTurnButton;
     }
 
     public override void Init(params object[] param)
